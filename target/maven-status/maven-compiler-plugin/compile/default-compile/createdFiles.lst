@@ -1,0 +1,10 @@
+com\qa\locators\LoginPageLocators.class
+com\qa\pages\LoginPage.class
+com\qa\pages\SuccessAccountCreatedPage.class
+com\qa\utils\BaseDriver.class
+com\qa\locators\RegistrationPageLocators.class
+com\qa\locators\SuccessAccountCreatedPageLocators.class
+com\qa\locators\AutomationExcerciseHomePageLocators.class
+com\qa\pages\AutomationExcerciseHomePage.class
+com\qa\pages\RegistrationPage.class
+com\qa\utils\ContentReaderUtil.class
