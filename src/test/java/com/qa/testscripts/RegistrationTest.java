@@ -104,13 +104,13 @@ public class RegistrationTest extends BaseDriver {
 	 * when : valid mandatory information is provided
 	 *
 	 * then : Account must be created successfully.He/she must be signed in.
-	 * 
+	 *
 	 * And : Delete the Account using API for clean up.
 	 */
 
 	@Test(dataProvider = "registrationData",groups = { "frontend", "regression" })
 	public void verifyRegistartionWithValidCredentials(HashMap<String, Object> map) throws IOException, InterruptedException {
-		
+
 		WebDriver driver = BaseDriver.getWebDriver();
 
 		LoginPage lpage = new AutomationExcerciseHomePage(driver).open().clickSignInLink();
@@ -152,11 +152,11 @@ public class RegistrationTest extends BaseDriver {
 		SuccessAccountCreatedPage success = rpage.clickCreateAccount();
 
 		System.out.println(success.getSuccessMsgBox());
-		
+
 		AutomationExcerciseHomePage homepage=success.clickContinueButton();
 		Assert.assertEquals(homepage.getcustomerName(),firstName);
 		homepage.clickLogoutLink();
-		
+
 		//delete account - clean up
 		String bodyText= "email="+email+"&password="+password;
 		String response=given().relaxedHTTPSValidation()
@@ -170,7 +170,7 @@ public class RegistrationTest extends BaseDriver {
 
 	}
 
-	
+
 
 	@DataProvider(name = "registrationData")
 	public Object[][] registrationData() {
@@ -192,7 +192,7 @@ public class RegistrationTest extends BaseDriver {
 	/*
 	 * Given :https://automationexercise.com/api/createAccount
 	 *
-	 * when: given with valid credentials 
+	 * when: given with valid credentials
 	 *
 	 * then : should create account and respond with status 201.
 	 *
@@ -201,17 +201,17 @@ public class RegistrationTest extends BaseDriver {
 	 * when : with created email as query parameter
 	 *
 	 * then : status must be 200 with User details in JSON form.
-	 * 
+	 *
 	 * Given : when user clicks on sign up link in homepage
-	 * 
+	 *
 	 * when : existing email id is provided
-	 * 
+	 *
 	 * then : appropriate validation message must be displayed.
 	 */
 	@Test(dataProvider = "registrationData")
 	public void verifyRegistrationWithExistingUser(HashMap<String, Object> map) throws IOException {
 		String bodyText =BodyConstruction.bodyForCreateUser(map);
-		Map<String, String> header = new HashMap<String, String>();
+		Map<String, String> header = new HashMap<>();
 		header.put("Accept", "application/json");
 		header.put("Content-Type", "application/x-www-form-urlencoded");
         String email =map.get("email").toString();
@@ -224,22 +224,22 @@ public class RegistrationTest extends BaseDriver {
 				.post("https://automationexercise.com/api/createAccount").then().assertThat().statusCode(200)
 				.extract().response().asString();
 		System.out.println(response);
-		
+
 		 response = given().relaxedHTTPSValidation().queryParam("email", email).when()
 				.get("https://automationexercise.com/api/getUserDetailByEmail").then().assertThat().statusCode(200)
 				.extract().response().asString();
 		System.out.println(response);
-		
+
 		WebDriver driver = BaseDriver.getWebDriver();
 
 		LoginPage lpage = new AutomationExcerciseHomePage(driver).open().clickSignInLink();
-		
+
 
 		lpage.getNameTextBox().sendKeys(name);
 		lpage.getEmailTextBox().sendKeys(email);
 		lpage.clickCreateAccount();
 		Assert.assertEquals(lpage.getValidationMsg(),getContent("signuppage", "existing_email_validation_msg"));
-		
+
 	}
 
 }

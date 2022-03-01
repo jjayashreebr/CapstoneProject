@@ -8,7 +8,6 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Assert;
 
 import com.qa.pages.AutomationExcerciseHomePage;
-import com.qa.pages.LoginPage;
 import com.qa.pages.ProductPage;
 
 import io.cucumber.java.Before;
@@ -43,7 +42,7 @@ public class StepDefinition {
 
 	@When("I do search for {string}")
 	public void I_do_search_for(String string) {
-	
+
 	}
 
 	@Then("I see search result page with more than zero results")
