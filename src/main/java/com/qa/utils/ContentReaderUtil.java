@@ -1,7 +1,6 @@
 package com.qa.utils;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 
@@ -12,11 +11,11 @@ public class ContentReaderUtil {
         path = path + "/src/test/java/com/qa/resources/"+propertyFileName+".properties";
 		//System.out.println(path);
 		FileInputStream file;
-		
+
 		file = new FileInputStream(path);
 		prop.load(file);
 	    file.close();
-			
+
 	    return prop.getProperty(propertyName);
 
 }

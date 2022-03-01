@@ -5,7 +5,7 @@
     <classes>
       <class name="com.qa.testscripts.RegistrationTest">
         <methods>
-          <include name="verifyRegistartionWithValidCredentials"/>
+          <include name="verifyRegistartionWithValidCredentials" invocation-numbers="0"/>
           <include name="tearDown"/>
         </methods>
       </class> <!-- com.qa.testscripts.RegistrationTest -->

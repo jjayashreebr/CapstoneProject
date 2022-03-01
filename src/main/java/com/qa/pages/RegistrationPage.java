@@ -14,7 +14,7 @@ public class RegistrationPage extends RegistrationPageLocators {
 	public String getTitle() {
 		return driver.getTitle();
 	}
-	
+
 	public WebElement getEmailTextBox() {
 		return driver.findElement(EMAIL);
 	}
@@ -34,11 +34,11 @@ public class RegistrationPage extends RegistrationPageLocators {
 	public WebElement getStateTextBox() {
 		return driver.findElement(STATE);
 	}
-	
+
 	public WebElement getAddressTextBox() {
 		return driver.findElement(ADDDRESS_1);
 	}
-	
+
 	public WebElement getCityTextBox() {
 		return driver.findElement(CITY);
 	}
@@ -46,12 +46,12 @@ public class RegistrationPage extends RegistrationPageLocators {
 	public WebElement getMobileTextBox() {
 		return driver.findElement(MOBILE_PHONE);
 	}
-	
+
 	public WebElement getZipcodeTextBox() {
 		return driver.findElement(ZIPCODE);
 	}
-	
-	
+
+
 	public WebElement getPasswordTextBox() {
 		return driver.findElement(PASSWORD);
 	}
@@ -72,11 +72,11 @@ public class RegistrationPage extends RegistrationPageLocators {
 		return driver.findElement(NEWSLETTER_SIGNUP);
 	}
 
-	
+
 	public SuccessAccountCreatedPage clickCreateAccount() {
 		 driver.findElement(CREATE_ACCOUNT).click();
 		 return new SuccessAccountCreatedPage(driver);
 	}
-	
-	
+
+
 }

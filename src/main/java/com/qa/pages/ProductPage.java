@@ -5,10 +5,10 @@ import org.openqa.selenium.WebElement;
 
 import com.qa.locators.LoginPageLocators;
 
-public class LoginPage extends LoginPageLocators {
+public class ProductPage extends LoginPageLocators {
 	WebDriver driver=null;
 
-	public LoginPage(WebDriver driver) {
+	public ProductPage(WebDriver driver) {
 		this.driver=driver;
 	}
 

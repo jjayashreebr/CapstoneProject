@@ -12,7 +12,7 @@ import org.testng.annotations.AfterMethod;
 
 public class BaseDriver {
 
-	public static final ThreadLocal<WebDriver> webdrivers = new ThreadLocal<WebDriver>();
+	public static final ThreadLocal<WebDriver> webdrivers = new ThreadLocal<>();
 
 	static {
 		String driverpath = System.getProperty("user.dir");
@@ -52,7 +52,7 @@ public class BaseDriver {
 	}
 
 	public static String getContent(String propertyFileName, String propertyName) throws IOException {
-	
+
       return ContentReaderUtil.getPropertyFile(propertyFileName, propertyName);
 	}
 
@@ -60,7 +60,7 @@ public class BaseDriver {
 	public void tearDown() {
 		// To ensure driver is available before closing
 		if (webdrivers.get() != null) {
-			webdrivers.get().close();
+			//webdrivers.get().close();
 		}
 	}
 

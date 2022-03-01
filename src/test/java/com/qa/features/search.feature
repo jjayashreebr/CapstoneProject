@@ -1,13 +1,15 @@
 Feature: Search
-Verify whether the search result reflect the search keyword
+As a visitor of the ecommerce website
+	I want to search for products
+	So that I can quickly find what I am looking for
 
- Scenario: Login with valid credentials
+ Scenario: Search with valid Search Text
       
-    Given User is on Product page
-    When User enters search as "<searchtext>"
-    Then User should be able to login sucessfully
+    Given I am  on Product page to do a single keyword search
+    When I do search for "<searchtext>"
+    Then I see search result page with more than zero results
 
-  Examples:
+ Examples:
     | searchtext     | 
     | Friday         | 
     | Sunday         | 

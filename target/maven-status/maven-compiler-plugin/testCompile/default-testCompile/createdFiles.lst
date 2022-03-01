@@ -1,2 +1,4 @@
 com\qa\testscripts\RegistrationTest.class
 com\qa\testscripts\AutomationExcerciseHomePageTests.class
+com\qa\stepDefinitions\StepDefinition.class
+com\qa\testrunner\TestRunner.class
