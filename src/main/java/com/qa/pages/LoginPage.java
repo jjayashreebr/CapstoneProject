@@ -16,6 +16,10 @@ public class LoginPage extends LoginPageLocators {
 		return driver.getTitle();
 	}
 
+
+	public String getValidationMsg() {
+		return driver.findElement(SIGN_UP_ERROR).getText();
+	}
 	public WebElement getNameTextBox() {
 		return driver.findElement(NAME_TEXT_BOX);
 	}

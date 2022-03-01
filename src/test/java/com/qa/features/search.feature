@@ -9,8 +9,8 @@ As a visitor of the ecommerce website
     When I do search for "<searchtext>"
     Then I see search result page with more than zero results
 
- Examples:
+Examples:
     | searchtext     | 
-    | Friday         | 
-    | Sunday         | 
-    | anything else  | 
+    | blue           | 
+    | top            | 
+    | frozen         | 

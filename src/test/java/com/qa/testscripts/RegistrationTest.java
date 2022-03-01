@@ -237,8 +237,8 @@ public class RegistrationTest extends BaseDriver {
 
 		lpage.getNameTextBox().sendKeys(name);
 		lpage.getEmailTextBox().sendKeys(email);
-		RegistrationPage rpage = lpage.clickCreateAccount();
-		
+		lpage.clickCreateAccount();
+		Assert.assertEquals(lpage.getValidationMsg(),getContent("signuppage", "existing_email_validation_msg"));
 		
 	}
 
