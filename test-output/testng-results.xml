@@ -1,13 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="4" total="5" passed="1">
+<testng-results ignored="0" total="5" passed="3" failed="2" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="8245" started-at="2022-02-28T23:49:28 PST" finished-at="2022-02-28T23:49:36 PST">
+  <suite started-at="2022-03-02T10:30:53 PST" name="Default suite" finished-at="2022-03-02T10:31:20 PST" duration-ms="26538">
     <groups>
+      <group name="regression">
+        <method signature="RegistrationTest.verifyRegistartionWithValidCredentials(java.util.HashMap)[pri:0, instance:com.qa.testscripts.RegistrationTest@595b007d]" name="verifyRegistartionWithValidCredentials" class="com.qa.testscripts.RegistrationTest"/>
+      </group> <!-- regression -->
+      <group name="frontend">
+        <method signature="RegistrationTest.verifyRegistartionWithInvalidEmail()[pri:0, instance:com.qa.testscripts.RegistrationTest@595b007d]" name="verifyRegistartionWithInvalidEmail" class="com.qa.testscripts.RegistrationTest"/>
+        <method signature="RegistrationTest.verifyRegistartionWithValidCredentials(java.util.HashMap)[pri:0, instance:com.qa.testscripts.RegistrationTest@595b007d]" name="verifyRegistartionWithValidCredentials" class="com.qa.testscripts.RegistrationTest"/>
+        <method signature="RegistrationTest.verifySignUpWithEmptyCredentials()[pri:0, instance:com.qa.testscripts.RegistrationTest@595b007d]" name="verifySignUpWithEmptyCredentials" class="com.qa.testscripts.RegistrationTest"/>
+      </group> <!-- frontend -->
     </groups>
-    <test name="Default test" duration-ms="8245" started-at="2022-02-28T23:49:28 PST" finished-at="2022-02-28T23:49:36 PST">
+    <test started-at="2022-03-02T10:30:53 PST" name="Default test" finished-at="2022-03-02T10:31:20 PST" duration-ms="26538">
       <class name="com.qa.testscripts.RegistrationTest">
-        <test-method status="PASS" signature="verifyRegistrationWithExistingUser(java.util.HashMap)[pri:0, instance:com.qa.testscripts.RegistrationTest@544a2ea6]" name="verifyRegistrationWithExistingUser" duration-ms="6598" started-at="2022-02-28T23:49:30 PST" data-provider="registrationData" finished-at="2022-02-28T23:49:36 PST">
+        <test-method signature="verifyPageTitle()[pri:0, instance:com.qa.testscripts.RegistrationTest@595b007d]" started-at="2022-03-02T10:30:53 PST" name="verifyPageTitle" finished-at="2022-03-02T10:30:57 PST" duration-ms="3673" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyPageTitle -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.qa.testscripts.RegistrationTest@595b007d]" started-at="2022-03-02T10:30:57 PST" name="tearDown" finished-at="2022-03-02T10:30:57 PST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="verifyRegistartionWithInvalidEmail()[pri:0, instance:com.qa.testscripts.RegistrationTest@595b007d]" started-at="2022-03-02T10:30:57 PST" name="verifyRegistartionWithInvalidEmail" finished-at="2022-03-02T10:30:59 PST" duration-ms="2440" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyRegistartionWithInvalidEmail -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.qa.testscripts.RegistrationTest@595b007d]" started-at="2022-03-02T10:30:59 PST" name="tearDown" finished-at="2022-03-02T10:30:59 PST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="verifyRegistartionWithValidCredentials(java.util.HashMap)[pri:0, instance:com.qa.testscripts.RegistrationTest@595b007d]" started-at="2022-03-02T10:31:00 PST" name="verifyRegistartionWithValidCredentials" data-provider="registrationData" finished-at="2022-03-02T10:31:06 PST" duration-ms="5557" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -15,10 +39,121 @@
               </value>
             </param>
           </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [Automation Exercise - Signup] but found [Automation Exercise - Signup / Login]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [Automation Exercise - Signup] but found [Automation Exercise - Signup / Login]
+at org.testng.Assert.fail(Assert.java:99)
+at org.testng.Assert.failNotEquals(Assert.java:1037)
+at org.testng.Assert.assertEqualsImpl(Assert.java:140)
+at org.testng.Assert.assertEquals(Assert.java:122)
+at org.testng.Assert.assertEquals(Assert.java:629)
+at org.testng.Assert.assertEquals(Assert.java:639)
+at com.qa.testscripts.RegistrationTest.verifyRegistartionWithValidCredentials(RegistrationTest.java:126)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyRegistartionWithValidCredentials -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.qa.testscripts.RegistrationTest@595b007d]" started-at="2022-03-02T10:31:06 PST" name="tearDown" finished-at="2022-03-02T10:31:06 PST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="verifyRegistrationWithExistingUser(java.util.HashMap)[pri:0, instance:com.qa.testscripts.RegistrationTest@595b007d]" started-at="2022-03-02T10:31:06 PST" name="verifyRegistrationWithExistingUser" data-provider="registrationData" finished-at="2022-03-02T10:31:15 PST" duration-ms="9493" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{country=usa, firstname=j, address=abc street, city=santa clara, mobile=1234, lastname=j, zipcode=95051, password=test@123, sno=1, name=jj, state=ca, email=jj@j.com}]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [null] but found [Email Address already exist!]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [null] but found [Email Address already exist!]
+at org.testng.Assert.fail(Assert.java:99)
+at org.testng.Assert.failNotEquals(Assert.java:1037)
+at org.testng.Assert.assertEqualsImpl(Assert.java:140)
+at org.testng.Assert.assertEquals(Assert.java:122)
+at org.testng.Assert.assertEquals(Assert.java:629)
+at org.testng.Assert.assertEquals(Assert.java:639)
+at com.qa.testscripts.RegistrationTest.verifyRegistrationWithExistingUser(RegistrationTest.java:241)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyRegistrationWithExistingUser -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.qa.testscripts.RegistrationTest@544a2ea6]" name="tearDown" is-config="true" duration-ms="2" started-at="2022-02-28T23:49:36 PST" finished-at="2022-02-28T23:49:36 PST">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.qa.testscripts.RegistrationTest@595b007d]" started-at="2022-03-02T10:31:15 PST" name="tearDown" finished-at="2022-03-02T10:31:15 PST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="verifySignUpWithEmptyCredentials()[pri:0, instance:com.qa.testscripts.RegistrationTest@595b007d]" started-at="2022-03-02T10:31:15 PST" name="verifySignUpWithEmptyCredentials" finished-at="2022-03-02T10:31:20 PST" duration-ms="4143" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifySignUpWithEmptyCredentials -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.qa.testscripts.RegistrationTest@595b007d]" started-at="2022-03-02T10:31:20 PST" name="tearDown" finished-at="2022-03-02T10:31:20 PST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

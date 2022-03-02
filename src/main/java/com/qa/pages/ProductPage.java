@@ -1,5 +1,7 @@
 package com.qa.pages;
 
+import java.util.List;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -12,14 +14,13 @@ public class ProductPage extends ProductPageLocators {
 		this.driver=driver;
 	}
 
-	public String getTitle() {
-		return driver.getTitle();
-	}
-
 	public WebElement getSearchTextBox() {
 		return driver.findElement(SEARCH_TEXT_BOX);
 	}
 
+	public List<WebElement> getProductList(){
+		return driver.findElements(RESULT_LIST);
+	}
 	
 	public String getPageTitleChange() {
 		return driver.findElement(PAGE_TITLE_CHANGE).getText();
@@ -30,5 +31,8 @@ public class ProductPage extends ProductPageLocators {
 		 return new ProductPage(driver);
 	}
 
+	public WebElement getSearchButton() {
+		return driver.findElement(SEARCH_BUTTON);
+	}
 
 }

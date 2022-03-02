@@ -11,5 +11,35 @@ Feature: Search
  Examples:
     | searchtext     | 
     | blue           | 
-    | top            | 
-    | frozen         | 
+    | tops           |
+   
+   
+Scenario Outline: Search with invalid Text
+   
+Given I am  on Product page to do a single keyword search
+When  I do search for "<invalidtext>"
+Then correct validation message must be shown
+
+ Examples:
+    | invalidtext     | 
+    | bdfggh@         |
+    | gh%$            |
+
+
+Scenario Outline: Search with Empty Text
+   
+Given I am  on Product page to do a single keyword search
+When  I do search for ""
+Then  All products must be shown
+
+
+Scenario Outline: Verify whether search text box and search button are shown in UI
+Given  I am  on Product page to do a single keyword search
+When I click on search text box 
+And  I click on search button
+Then Search text must have placeholder and Search button must be clickable
+
+
+   
+    
+  

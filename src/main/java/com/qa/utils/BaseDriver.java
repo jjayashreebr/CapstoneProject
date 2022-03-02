@@ -60,7 +60,7 @@ public class BaseDriver {
 	public void tearDown() {
 		// To ensure driver is available before closing
 		if (webdrivers.get() != null) {
-			//webdrivers.get().close();
+			webdrivers.get().close();
 		}
 	}
 
