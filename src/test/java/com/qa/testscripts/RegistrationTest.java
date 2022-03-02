@@ -154,7 +154,7 @@ public class RegistrationTest extends BaseDriver {
 		System.out.println(success.getSuccessMsgBox());
 
 		AutomationExcerciseHomePage homepage=success.clickContinueButton();
-		Assert.assertEquals(homepage.getcustomerName(),firstName);
+		Assert.assertEquals(homepage.getcustomerName(),name);
 		homepage.clickLogoutLink();
 
 		//delete account - clean up
@@ -216,7 +216,7 @@ public class RegistrationTest extends BaseDriver {
 		header.put("Content-Type", "application/x-www-form-urlencoded");
         String email =map.get("email").toString();
         String name =map.get("name").toString();
-        //String password =map.get("password").toString();
+        String password =map.get("password").toString();
 		String response = given().relaxedHTTPSValidation()
 				.headers(header)
 				.body(bodyText)
@@ -239,6 +239,17 @@ public class RegistrationTest extends BaseDriver {
 		lpage.getEmailTextBox().sendKeys(email);
 		lpage.clickCreateAccount();
 		Assert.assertEquals(lpage.getValidationMsg(),getContent("signuppage", "existing_email_validation_msg"));
+		
+		//delete account - clean up
+		 bodyText= "email="+email+"&password="+password;
+		 response=given().relaxedHTTPSValidation()
+				.headers("Content-Type","application/x-www-form-urlencoded")
+				.header("Accept","application/json")
+				.body(bodyText)
+				.when()
+		.delete("https://automationexercise.com/api/deleteAccount").then().assertThat().statusCode(200)
+		.extract().response().asString();
+        System.out.println(response);
 
 	}
 

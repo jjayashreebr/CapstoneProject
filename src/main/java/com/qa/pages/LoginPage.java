@@ -31,6 +31,18 @@ public class LoginPage extends LoginPageLocators {
 		 driver.findElement(SIGN_UP_BUTTON).click();
 		 return new RegistrationPage(driver);
 	}
+	
+	public WebElement getPasswordTextBox() {
+		return driver.findElement(PASSWORD_TEXT_BOX);
+	}
+	public WebElement getEmailLoginTextBox() {
+		return driver.findElement(EMAIL_LOGIN_TEXT_BOX);
+	}
+
+	public AutomationExcerciseHomePage clickLogin() {
+		 driver.findElement(LOGIN_BUTTON).click();
+		 return new AutomationExcerciseHomePage(driver);
+	}
 
 
 }

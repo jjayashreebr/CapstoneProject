@@ -8,87 +8,29 @@
 <body>
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
-<tr><th colspan="8">Default suite</th></tr>
-<tr><td><a href="#t0">Default test</a></td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num attn">2</td><td class="num">26,538</td><td></td><td></td></tr>
+<tr><th colspan="8">Suite</th></tr>
+<tr><td><a href="#t0">Test</a></td><td class="num">19</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">140,163</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="2">com.qa.testscripts.RegistrationTest</td><td><a href="#m0">verifyRegistartionWithValidCredentials</a></td><td rowspan="1">1646245860810</td><td rowspan="1">5557</td></tr><tr class="failedeven"><td><a href="#m1">verifyRegistrationWithExistingUser</a></td><td rowspan="1">1646245866435</td><td rowspan="1">9493</td></tr><tr><th colspan="4">Default test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="3">com.qa.testscripts.RegistrationTest</td><td><a href="#m2">verifyPageTitle</a></td><td rowspan="1">1646245853575</td><td rowspan="1">3673</td></tr><tr class="passedeven"><td><a href="#m3">verifyRegistartionWithInvalidEmail</a></td><td rowspan="1">1646245857253</td><td rowspan="1">2440</td></tr><tr class="passedeven"><td><a href="#m4">verifySignUpWithEmptyCredentials</a></td><td rowspan="1">1646245875932</td><td rowspan="1">4143</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="6">com.qa.testrunner.TestRunner</td><td><a href="#m0">runScenario</a></td><td rowspan="6">1646251457310</td><td rowspan="6">34574</td></tr><tr class="passedeven"><td><a href="#m1">runScenario</a></td></tr><tr class="passedeven"><td><a href="#m2">runScenario</a></td></tr><tr class="passedeven"><td><a href="#m3">runScenario</a></td></tr><tr class="passedeven"><td><a href="#m4">runScenario</a></td></tr><tr class="passedeven"><td><a href="#m5">runScenario</a></td></tr><tr class="passedodd"><td rowspan="1">com.qa.testscripts.AutomationExcerciseHomePageTests</td><td><a href="#m6">verifyPageTitle</a></td><td rowspan="1">1646251442287</td><td rowspan="1">2725</td></tr><tr class="passedeven"><td rowspan="7">com.qa.testscripts.LoginTest</td><td><a href="#m7">verifyDeleteLogin</a></td><td rowspan="1">1646251424135</td><td rowspan="1">849</td></tr><tr class="passedeven"><td><a href="#m8">verifyLoginShowsProperLoggedInMessage</a></td><td rowspan="1">1646251425022</td><td rowspan="1">5052</td></tr><tr class="passedeven"><td><a href="#m9">verifyLoginWithEmptyCredentials</a></td><td rowspan="1">1646251431070</td><td rowspan="1">3008</td></tr><tr class="passedeven"><td><a href="#m10">verifyLoginWithEmptyEmailCredential</a></td><td rowspan="1">1646251435025</td><td rowspan="1">351</td></tr><tr class="passedeven"><td><a href="#m11">verifyLoginWithInvalidCredentials</a></td><td rowspan="1">1646251435377</td><td rowspan="1">880</td></tr><tr class="passedeven"><td><a href="#m12">verifyLoginWithValidCredential</a></td><td rowspan="1">1646251436288</td><td rowspan="1">2265</td></tr><tr class="passedeven"><td><a href="#m13">verifyRegistartionWithInvalidEmail</a></td><td rowspan="1">1646251438554</td><td rowspan="1">2719</td></tr><tr class="passedodd"><td rowspan="5">com.qa.testscripts.RegistrationTest</td><td><a href="#m14">verifyPageTitle</a></td><td rowspan="1">1646251394943</td><td rowspan="1">3529</td></tr><tr class="passedodd"><td><a href="#m15">verifyRegistartionWithInvalidEmail</a></td><td rowspan="1">1646251399309</td><td rowspan="1">2439</td></tr><tr class="passedodd"><td><a href="#m16">verifyRegistartionWithValidCredentials</a></td><td rowspan="1">1646251403288</td><td rowspan="1">7939</td></tr><tr class="passedodd"><td><a href="#m17">verifyRegistrationWithExistingUser</a></td><td rowspan="1">1646251412593</td><td rowspan="1">4870</td></tr><tr class="passedodd"><td><a href="#m18">verifySignUpWithEmptyCredentials</a></td><td rowspan="1">1646251418389</td><td rowspan="1">4788</td></tr></tbody>
 </table>
-<h2>Default test</h2><h3 id="m0">com.qa.testscripts.RegistrationTest#verifyRegistartionWithValidCredentials</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{country=usa, firstname=j, address=abc street, city=santa clara, mobile=1234, lastname=j, zipcode=95051, password=test@123, sno=1, name=jj, state=ca, email=jj@j.com}</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: expected [Automation Exercise - Signup] but found [Automation Exercise - Signup / Login]
-	at org.testng.Assert.fail(Assert.java:99)
-	at org.testng.Assert.failNotEquals(Assert.java:1037)
-	at org.testng.Assert.assertEqualsImpl(Assert.java:140)
-	at org.testng.Assert.assertEquals(Assert.java:122)
-	at org.testng.Assert.assertEquals(Assert.java:629)
-	at org.testng.Assert.assertEquals(Assert.java:639)
-	at com.qa.testscripts.RegistrationTest.verifyRegistartionWithValidCredentials(RegistrationTest.java:126)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:794)
-	at org.testng.TestRunner.run(TestRunner.java:596)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-	at org.testng.TestNG.runSuites(TestNG.java:1063)
-	at org.testng.TestNG.run(TestNG.java:1031)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">com.qa.testscripts.RegistrationTest#verifyRegistrationWithExistingUser</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{country=usa, firstname=j, address=abc street, city=santa clara, mobile=1234, lastname=j, zipcode=95051, password=test@123, sno=1, name=jj, state=ca, email=jj@j.com}</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: expected [null] but found [Email Address already exist!]
-	at org.testng.Assert.fail(Assert.java:99)
-	at org.testng.Assert.failNotEquals(Assert.java:1037)
-	at org.testng.Assert.assertEqualsImpl(Assert.java:140)
-	at org.testng.Assert.assertEquals(Assert.java:122)
-	at org.testng.Assert.assertEquals(Assert.java:629)
-	at org.testng.Assert.assertEquals(Assert.java:639)
-	at com.qa.testscripts.RegistrationTest.verifyRegistrationWithExistingUser(RegistrationTest.java:241)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:794)
-	at org.testng.TestRunner.run(TestRunner.java:596)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-	at org.testng.TestNG.runSuites(TestNG.java:1063)
-	at org.testng.TestNG.run(TestNG.java:1031)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m2">com.qa.testscripts.RegistrationTest#verifyPageTitle</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m3">com.qa.testscripts.RegistrationTest#verifyRegistartionWithInvalidEmail</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m4">com.qa.testscripts.RegistrationTest#verifySignUpWithEmptyCredentials</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Test</h2><h3 id="m0">com.qa.testrunner.TestRunner#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;Search with invalid Text&quot;</td><td>&quot;Optional[Search]&quot;</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">com.qa.testrunner.TestRunner#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;Search with valid Search Text&quot;</td><td>&quot;Optional[Search]&quot;</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">com.qa.testrunner.TestRunner#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;Search with Empty Text&quot;</td><td>&quot;Optional[Search]&quot;</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">com.qa.testrunner.TestRunner#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;Search with valid Search Text&quot;</td><td>&quot;Optional[Search]&quot;</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m4">com.qa.testrunner.TestRunner#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;Verify whether search text box and search button are shown in UI&quot;</td><td>&quot;Optional[Search]&quot;</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m5">com.qa.testrunner.TestRunner#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;Search with invalid Text&quot;</td><td>&quot;Optional[Search]&quot;</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m6">com.qa.testscripts.AutomationExcerciseHomePageTests#verifyPageTitle</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m7">com.qa.testscripts.LoginTest#verifyDeleteLogin</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m8">com.qa.testscripts.LoginTest#verifyLoginShowsProperLoggedInMessage</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{country=usa, firstname=j, address=abc street, city=santa clara, mobile=1234, lastname=j, zipcode=95051, password=test@123, sno=1, name=jj, state=ca, email=jj@j.com}</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m9">com.qa.testscripts.LoginTest#verifyLoginWithEmptyCredentials</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m10">com.qa.testscripts.LoginTest#verifyLoginWithEmptyEmailCredential</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m11">com.qa.testscripts.LoginTest#verifyLoginWithInvalidCredentials</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m12">com.qa.testscripts.LoginTest#verifyLoginWithValidCredential</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{country=usa, firstname=j, address=abc street, city=santa clara, mobile=1234, lastname=j, zipcode=95051, password=test@123, sno=1, name=jj, state=ca, email=jj@j.com}</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m13">com.qa.testscripts.LoginTest#verifyRegistartionWithInvalidEmail</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m14">com.qa.testscripts.RegistrationTest#verifyPageTitle</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m15">com.qa.testscripts.RegistrationTest#verifyRegistartionWithInvalidEmail</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m16">com.qa.testscripts.RegistrationTest#verifyRegistartionWithValidCredentials</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{country=usa, firstname=j, address=abc street, city=santa clara, mobile=1234, lastname=j, zipcode=95051, password=test@123, sno=1, name=jj, state=ca, email=jj@j.com}</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m17">com.qa.testscripts.RegistrationTest#verifyRegistrationWithExistingUser</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{country=usa, firstname=j, address=abc street, city=santa clara, mobile=1234, lastname=j, zipcode=95051, password=test@123, sno=1, name=jj, state=ca, email=jj@j.com}</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m18">com.qa.testscripts.RegistrationTest#verifySignUpWithEmptyCredentials</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

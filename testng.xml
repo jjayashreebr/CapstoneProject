@@ -5,6 +5,7 @@
   
     <classes>
      <class name="com.qa.testscripts.RegistrationTest"/>
+     <class name="com.qa.testscripts.LoginTest"/>
       <class name="com.qa.testscripts.AutomationExcerciseHomePageTests"/> 
       <class name="com.qa.testrunner.TestRunner"/>
     </classes>
