@@ -3,9 +3,9 @@ package com.qa.pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import com.qa.locators.LoginPageLocators;
+import com.qa.locators.ProductPageLocators;
 
-public class ProductPage extends LoginPageLocators {
+public class ProductPage extends ProductPageLocators {
 	WebDriver driver=null;
 
 	public ProductPage(WebDriver driver) {
@@ -16,16 +16,18 @@ public class ProductPage extends LoginPageLocators {
 		return driver.getTitle();
 	}
 
-	public WebElement getNameTextBox() {
-		return driver.findElement(NAME_TEXT_BOX);
-	}
-	public WebElement getEmailTextBox() {
-		return driver.findElement(EMAIL_TEXT_BOX);
+	public WebElement getSearchTextBox() {
+		return driver.findElement(SEARCH_TEXT_BOX);
 	}
 
-	public RegistrationPage clickCreateAccount() {
-		 driver.findElement(SIGN_UP_BUTTON).click();
-		 return new RegistrationPage(driver);
+	
+	public String getPageTitleChange() {
+		return driver.findElement(PAGE_TITLE_CHANGE).getText();
+	}
+
+	public ProductPage clickSearch() {
+		 driver.findElement(SEARCH_BUTTON).click();
+		 return new ProductPage(driver);
 	}
 
 

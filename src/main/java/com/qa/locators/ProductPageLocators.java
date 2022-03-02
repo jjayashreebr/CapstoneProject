@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 
 public class ProductPageLocators {
 
-	public  static final By NAME_TEXT_BOX = By.xpath("//input[@data-qa=\"signup-name\"]");
-	public  static final By EMAIL_TEXT_BOX = By.xpath("//input[@data-qa=\"signup-email\"]");
-    public  static final By SIGN_UP_BUTTON = By.xpath("//button[@data-qa=\"signup-button\"]");
+	public  static final By SEARCH_TEXT_BOX = By.cssSelector("input#search_product");
+	public  static final By SEARCH_BUTTON = By.cssSelector("button#submit_search");
+   public static final By PAGE_TITLE_CHANGE = By.cssSelector("div.features_items h2.title.text-center");
 }

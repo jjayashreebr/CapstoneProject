@@ -41,14 +41,16 @@ public class StepDefinition {
 	}
 
 	@When("I do search for {string}")
-	public void I_do_search_for(String string) {
+	public void I_do_search_for(String searchText) {
+		page.getSearchTextBox().sendKeys(searchText);
+		page.clickSearch();
 
 	}
 
 	@Then("I see search result page with more than zero results")
 	public void I_see_search_result_page_with_more_than_zero_results() {
 
-		Assert.assertEquals(true, true);
+		Assert.assertEquals(page.getPageTitleChange(), "SEARCHED PRODUCTS");
 	}
 
 }
