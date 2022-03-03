@@ -24,6 +24,7 @@ import io.restassured.path.json.JsonPath;
 
 public class LoginTest extends BaseDriver {
 
+	WebDriver driver;
 	/*
 	 * Given: when sign up link is clicked in home page
 	 *
@@ -33,7 +34,7 @@ public class LoginTest extends BaseDriver {
 	 */
 	@Test(groups = { "frontend" })
 	public void verifyLoginWithEmptyCredentials() throws IOException {
-		WebDriver driver = BaseDriver.getWebDriver();
+		 driver = BaseDriver.getWebDriver();
 
 		LoginPage lpage = new AutomationExcerciseHomePage(driver).open().clickSignInLink();
 
@@ -64,7 +65,7 @@ public class LoginTest extends BaseDriver {
 	 */
 	@Test(groups = { "frontend" })
 	public void verifyRegistartionWithInvalidEmail() throws IOException {
-		WebDriver driver = BaseDriver.getWebDriver();
+		 driver = BaseDriver.getWebDriver();
 
 		LoginPage lpage = new AutomationExcerciseHomePage(driver).open().clickSignInLink();
 
@@ -116,7 +117,7 @@ public class LoginTest extends BaseDriver {
 		header.put("Accept", "application/json");
 		header.put("Content-Type", "application/x-www-form-urlencoded");
 		String email = map.get("email").toString();
-		String name = map.get("name").toString();
+		//String name = map.get("name").toString();
 		String password = map.get("password").toString();
 		// create account
 		String response = given().relaxedHTTPSValidation().headers(header).body(bodyText).when()
@@ -234,7 +235,7 @@ public class LoginTest extends BaseDriver {
 				.response().asString();
 		System.out.println(response);
 		
-		WebDriver driver = BaseDriver.getWebDriver();
+		 driver = BaseDriver.getWebDriver();
 		LoginPage lpage = new AutomationExcerciseHomePage(driver).open().clickSignInLink();
         lpage.getEmailLoginTextBox().sendKeys(email);
 		lpage.getPasswordTextBox().sendKeys(password);

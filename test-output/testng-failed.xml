@@ -3,14 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.qa.testscripts.LoginTest">
+      <class name="com.qa.testscripts.CategoryModuleTest">
         <methods>
-          <include name="verifyRegistartionWithInvalidEmail"/>
-          <include name="verifyLoginWithInvalidCredentials"/>
-          <include name="verifyLoginWithValidCredential"/>
+          <include name="verifySubCategorySearch" invocation-numbers="0"/>
           <include name="tearDown"/>
         </methods>
-      </class> <!-- com.qa.testscripts.LoginTest -->
+      </class> <!-- com.qa.testscripts.CategoryModuleTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -1,5 +1,6 @@
 com\qa\locators\LoginPageLocators.class
 com\qa\pages\LoginPage.class
+com\qa\pages\CategoryProductPage.class
 com\qa\pages\SuccessAccountCreatedPage.class
 com\qa\locators\RegistrationPageLocators.class
 com\qa\utils\ExcelHelper.class
@@ -8,6 +9,7 @@ com\qa\pages\ProductPage.class
 com\qa\utils\BaseDriver.class
 com\qa\utils\ExcelHelper$1.class
 com\qa\locators\SuccessAccountCreatedPageLocators.class
+com\qa\locators\CategoryProductPageLocators.class
 com\qa\locators\AutomationExcerciseHomePageLocators.class
 com\qa\pages\AutomationExcerciseHomePage.class
 com\qa\pages\RegistrationPage.class

@@ -2,6 +2,7 @@ package com.qa.pages;
 
 import java.util.List;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -21,6 +22,17 @@ public class ProductPage extends ProductPageLocators {
 	public List<WebElement> getProductList(){
 		return driver.findElements(RESULT_LIST);
 	}
+	
+	public List<WebElement> getCategoryList(){
+		return driver.findElements(CATEGORY_LIST);
+	}
+	
+	public List<WebElement> getSubCategoryList(String category){
+	   String loc=	"//*[@id=\'"+category+"\']/div/ul/li/a";
+	   System.out.println(loc);
+		return driver.findElements(By.xpath(loc));
+	}
+	
 	
 	public String getPageTitleChange() {
 		return driver.findElement(PAGE_TITLE_CHANGE).getText();

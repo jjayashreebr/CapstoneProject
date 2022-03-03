@@ -4,10 +4,14 @@
   <test thread-count="5" name="Test">
   
     <classes>
-     <class name="com.qa.testscripts.RegistrationTest"/>
+    <!--  <class name="com.qa.testscripts.RegistrationTest"/>
      <class name="com.qa.testscripts.LoginTest"/>
-      <class name="com.qa.testscripts.AutomationExcerciseHomePageTests"/> 
+     <class name="com.qa.testscripts.CategoryProductTest"/>
+      <class name="com.qa.testscripts.AutomationExcerciseHomePageTests"/> --> 
       <class name="com.qa.testrunner.TestRunner"/>
+      
+      <class name="com.qa.testscripts.LoginTest"/>
+     <class name="com.qa.testscripts.CategoryProductTest"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
