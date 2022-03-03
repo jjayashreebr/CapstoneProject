@@ -1,42 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="24" passed="24" failed="0" skipped="0">
+<testng-results ignored="11" total="24" passed="13" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-03-03T10:37:27 PST" name="Suite" finished-at="2022-03-03T10:40:33 PST" duration-ms="186139">
+  <suite started-at="2022-03-03T14:30:37 PST" name="Suite" finished-at="2022-03-03T14:32:33 PST" duration-ms="116063">
     <groups>
-      <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.qa.testrunner.TestRunner@62ddbd7e]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
-      </group> <!-- cucumber -->
       <group name="regression">
-        <method signature="RegistrationTest.verifyRegistartionWithValidCredentials(java.util.HashMap)[pri:0, instance:com.qa.testscripts.RegistrationTest@1d296da]" name="verifyRegistartionWithValidCredentials" class="com.qa.testscripts.RegistrationTest"/>
+        <method signature="LoginTest.verifyLoginShowsProperLoggedInMessage(java.util.HashMap)[pri:0, instance:com.qa.testscripts.LoginTest@36902638]" name="verifyLoginShowsProperLoggedInMessage" class="com.qa.testscripts.LoginTest"/>
+        <method signature="LoginTest.verifyLoginWithValidCredential(java.util.HashMap)[pri:0, instance:com.qa.testscripts.LoginTest@36902638]" name="verifyLoginWithValidCredential" class="com.qa.testscripts.LoginTest"/>
+        <method signature="RegistrationTest.verifyRegistartionWithValidCredentials(java.util.HashMap)[pri:0, instance:com.qa.testscripts.RegistrationTest@5bf0d49]" name="verifyRegistartionWithValidCredentials" class="com.qa.testscripts.RegistrationTest"/>
+        <method signature="BrandProductTest.verifyAllBrandsAreListed()[pri:0, instance:com.qa.testscripts.BrandProductTest@6ed3ccb2]" name="verifyAllBrandsAreListed" class="com.qa.testscripts.BrandProductTest"/>
+        <method signature="BrandProductTest.verifyProductCountUnderEachBrands(java.lang.String)[pri:0, instance:com.qa.testscripts.BrandProductTest@6ed3ccb2]" name="verifyProductCountUnderEachBrands" class="com.qa.testscripts.BrandProductTest"/>
+        <method signature="CategoryProductTest.verifyAllCategoryIsShown()[pri:0, instance:com.qa.testscripts.CategoryProductTest@74e52ef6]" name="verifyAllCategoryIsShown" class="com.qa.testscripts.CategoryProductTest"/>
+        <method signature="CategoryProductTest.verifyAllSubCategoryIsShown(java.lang.String,[Ljava.lang.String;)[pri:0, instance:com.qa.testscripts.CategoryProductTest@74e52ef6]" name="verifyAllSubCategoryIsShown" class="com.qa.testscripts.CategoryProductTest"/>
+        <method signature="CategoryProductTest.verifySubCategorySearch(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.testscripts.CategoryProductTest@74e52ef6]" name="verifySubCategorySearch" class="com.qa.testscripts.CategoryProductTest"/>
       </group> <!-- regression -->
+      <group name="integration">
+        <method signature="BrandProductTest.verifyAllBrandsAreListed()[pri:0, instance:com.qa.testscripts.BrandProductTest@6ed3ccb2]" name="verifyAllBrandsAreListed" class="com.qa.testscripts.BrandProductTest"/>
+        <method signature="BrandProductTest.verifyProductCountUnderEachBrands(java.lang.String)[pri:0, instance:com.qa.testscripts.BrandProductTest@6ed3ccb2]" name="verifyProductCountUnderEachBrands" class="com.qa.testscripts.BrandProductTest"/>
+      </group> <!-- integration -->
       <group name="category">
-        <method signature="CategoryProductTest.verifyAllCategoryIsShown()[pri:0, instance:com.qa.testscripts.CategoryProductTest@7eac9008]" name="verifyAllCategoryIsShown" class="com.qa.testscripts.CategoryProductTest"/>
-        <method signature="CategoryProductTest.verifyAllSubCategoryIsShown(java.lang.String,[Ljava.lang.String;)[pri:0, instance:com.qa.testscripts.CategoryProductTest@7eac9008]" name="verifyAllSubCategoryIsShown" class="com.qa.testscripts.CategoryProductTest"/>
-        <method signature="CategoryProductTest.verifySubCategorySearch(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.testscripts.CategoryProductTest@7eac9008]" name="verifySubCategorySearch" class="com.qa.testscripts.CategoryProductTest"/>
+        <method signature="CategoryProductTest.verifyAllCategoryIsShown()[pri:0, instance:com.qa.testscripts.CategoryProductTest@74e52ef6]" name="verifyAllCategoryIsShown" class="com.qa.testscripts.CategoryProductTest"/>
+        <method signature="CategoryProductTest.verifyAllSubCategoryIsShown(java.lang.String,[Ljava.lang.String;)[pri:0, instance:com.qa.testscripts.CategoryProductTest@74e52ef6]" name="verifyAllSubCategoryIsShown" class="com.qa.testscripts.CategoryProductTest"/>
+        <method signature="CategoryProductTest.verifySubCategorySearch(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.testscripts.CategoryProductTest@74e52ef6]" name="verifySubCategorySearch" class="com.qa.testscripts.CategoryProductTest"/>
       </group> <!-- category -->
+      <group name="login">
+        <method signature="LoginTest.verifyLoginShowsProperLoggedInMessage(java.util.HashMap)[pri:0, instance:com.qa.testscripts.LoginTest@36902638]" name="verifyLoginShowsProperLoggedInMessage" class="com.qa.testscripts.LoginTest"/>
+        <method signature="LoginTest.verifyLoginWithValidCredential(java.util.HashMap)[pri:0, instance:com.qa.testscripts.LoginTest@36902638]" name="verifyLoginWithValidCredential" class="com.qa.testscripts.LoginTest"/>
+      </group> <!-- login -->
+      <group name="brand">
+        <method signature="BrandProductTest.verifyAllBrandsAreListed()[pri:0, instance:com.qa.testscripts.BrandProductTest@6ed3ccb2]" name="verifyAllBrandsAreListed" class="com.qa.testscripts.BrandProductTest"/>
+        <method signature="BrandProductTest.verifyProductCountUnderEachBrands(java.lang.String)[pri:0, instance:com.qa.testscripts.BrandProductTest@6ed3ccb2]" name="verifyProductCountUnderEachBrands" class="com.qa.testscripts.BrandProductTest"/>
+      </group> <!-- brand -->
       <group name="frontend">
-        <method signature="LoginTest.verifyLoginWithEmptyCredentials()[pri:0, instance:com.qa.testscripts.LoginTest@3a93b025]" name="verifyLoginWithEmptyCredentials" class="com.qa.testscripts.LoginTest"/>
-        <method signature="LoginTest.verifyRegistartionWithInvalidEmail()[pri:0, instance:com.qa.testscripts.LoginTest@3a93b025]" name="verifyRegistartionWithInvalidEmail" class="com.qa.testscripts.LoginTest"/>
-        <method signature="RegistrationTest.verifyRegistartionWithInvalidEmail()[pri:0, instance:com.qa.testscripts.RegistrationTest@1d296da]" name="verifyRegistartionWithInvalidEmail" class="com.qa.testscripts.RegistrationTest"/>
-        <method signature="RegistrationTest.verifyRegistartionWithValidCredentials(java.util.HashMap)[pri:0, instance:com.qa.testscripts.RegistrationTest@1d296da]" name="verifyRegistartionWithValidCredentials" class="com.qa.testscripts.RegistrationTest"/>
-        <method signature="RegistrationTest.verifySignUpWithEmptyCredentials()[pri:0, instance:com.qa.testscripts.RegistrationTest@1d296da]" name="verifySignUpWithEmptyCredentials" class="com.qa.testscripts.RegistrationTest"/>
-        <method signature="CategoryProductTest.verifyAllCategoryIsShown()[pri:0, instance:com.qa.testscripts.CategoryProductTest@7eac9008]" name="verifyAllCategoryIsShown" class="com.qa.testscripts.CategoryProductTest"/>
-        <method signature="CategoryProductTest.verifyAllSubCategoryIsShown(java.lang.String,[Ljava.lang.String;)[pri:0, instance:com.qa.testscripts.CategoryProductTest@7eac9008]" name="verifyAllSubCategoryIsShown" class="com.qa.testscripts.CategoryProductTest"/>
-        <method signature="CategoryProductTest.verifySubCategorySearch(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.testscripts.CategoryProductTest@7eac9008]" name="verifySubCategorySearch" class="com.qa.testscripts.CategoryProductTest"/>
+        <method signature="RegistrationTest.verifyRegistartionWithValidCredentials(java.util.HashMap)[pri:0, instance:com.qa.testscripts.RegistrationTest@5bf0d49]" name="verifyRegistartionWithValidCredentials" class="com.qa.testscripts.RegistrationTest"/>
+        <method signature="CategoryProductTest.verifyAllCategoryIsShown()[pri:0, instance:com.qa.testscripts.CategoryProductTest@74e52ef6]" name="verifyAllCategoryIsShown" class="com.qa.testscripts.CategoryProductTest"/>
+        <method signature="CategoryProductTest.verifyAllSubCategoryIsShown(java.lang.String,[Ljava.lang.String;)[pri:0, instance:com.qa.testscripts.CategoryProductTest@74e52ef6]" name="verifyAllSubCategoryIsShown" class="com.qa.testscripts.CategoryProductTest"/>
+        <method signature="CategoryProductTest.verifySubCategorySearch(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.testscripts.CategoryProductTest@74e52ef6]" name="verifySubCategorySearch" class="com.qa.testscripts.CategoryProductTest"/>
       </group> <!-- frontend -->
     </groups>
-    <test started-at="2022-03-03T10:37:27 PST" name="LoginTest" finished-at="2022-03-03T10:38:23 PST" duration-ms="56226">
+    <test started-at="2022-03-03T14:30:37 PST" name="LoginTest" finished-at="2022-03-03T14:30:59 PST" duration-ms="22146">
       <class name="com.qa.testscripts.LoginTest">
-        <test-method signature="verifyDeleteLogin()[pri:0, instance:com.qa.testscripts.LoginTest@3a93b025]" started-at="2022-03-03T10:37:27 PST" name="verifyDeleteLogin" finished-at="2022-03-03T10:37:34 PST" duration-ms="6894" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyDeleteLogin -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.qa.testscripts.LoginTest@3a93b025]" started-at="2022-03-03T10:37:34 PST" name="tearDown" finished-at="2022-03-03T10:37:34 PST" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method signature="verifyLoginShowsProperLoggedInMessage(java.util.HashMap)[pri:0, instance:com.qa.testscripts.LoginTest@3a93b025]" started-at="2022-03-03T10:37:37 PST" name="verifyLoginShowsProperLoggedInMessage" data-provider="registrationData" finished-at="2022-03-03T10:37:54 PST" duration-ms="16624" status="PASS">
+        <test-method signature="verifyLoginShowsProperLoggedInMessage(java.util.HashMap)[pri:0, instance:com.qa.testscripts.LoginTest@36902638]" started-at="2022-03-03T14:30:39 PST" name="verifyLoginShowsProperLoggedInMessage" data-provider="registrationData" finished-at="2022-03-03T14:30:56 PST" duration-ms="17201" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -47,35 +51,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyLoginShowsProperLoggedInMessage -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.qa.testscripts.LoginTest@3a93b025]" started-at="2022-03-03T10:37:54 PST" name="tearDown" finished-at="2022-03-03T10:37:55 PST" duration-ms="1434" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method signature="verifyLoginWithEmptyCredentials()[pri:0, instance:com.qa.testscripts.LoginTest@3a93b025]" started-at="2022-03-03T10:37:55 PST" name="verifyLoginWithEmptyCredentials" finished-at="2022-03-03T10:38:05 PST" duration-ms="9870" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyLoginWithEmptyCredentials -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.qa.testscripts.LoginTest@3a93b025]" started-at="2022-03-03T10:38:05 PST" name="tearDown" finished-at="2022-03-03T10:38:10 PST" duration-ms="4364" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method signature="verifyLoginWithEmptyEmailCredential()[pri:0, instance:com.qa.testscripts.LoginTest@3a93b025]" started-at="2022-03-03T10:38:10 PST" name="verifyLoginWithEmptyEmailCredential" finished-at="2022-03-03T10:38:10 PST" duration-ms="611" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyLoginWithEmptyEmailCredential -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.qa.testscripts.LoginTest@3a93b025]" started-at="2022-03-03T10:38:10 PST" name="tearDown" finished-at="2022-03-03T10:38:10 PST" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method signature="verifyLoginWithInvalidCredentials()[pri:0, instance:com.qa.testscripts.LoginTest@3a93b025]" started-at="2022-03-03T10:38:10 PST" name="verifyLoginWithInvalidCredentials" finished-at="2022-03-03T10:38:11 PST" duration-ms="1149" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyLoginWithInvalidCredentials -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.qa.testscripts.LoginTest@3a93b025]" started-at="2022-03-03T10:38:11 PST" name="tearDown" finished-at="2022-03-03T10:38:11 PST" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method signature="verifyLoginWithValidCredential(java.util.HashMap)[pri:0, instance:com.qa.testscripts.LoginTest@3a93b025]" started-at="2022-03-03T10:38:11 PST" name="verifyLoginWithValidCredential" data-provider="registrationData" finished-at="2022-03-03T10:38:13 PST" duration-ms="1899" status="PASS">
+        <test-method signature="verifyLoginWithValidCredential(java.util.HashMap)[pri:0, instance:com.qa.testscripts.LoginTest@36902638]" started-at="2022-03-03T14:30:56 PST" name="verifyLoginWithValidCredential" data-provider="registrationData" finished-at="2022-03-03T14:30:59 PST" duration-ms="2890" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -86,39 +62,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyLoginWithValidCredential -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.qa.testscripts.LoginTest@3a93b025]" started-at="2022-03-03T10:38:13 PST" name="tearDown" finished-at="2022-03-03T10:38:13 PST" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method signature="verifyRegistartionWithInvalidEmail()[pri:0, instance:com.qa.testscripts.LoginTest@3a93b025]" started-at="2022-03-03T10:38:13 PST" name="verifyRegistartionWithInvalidEmail" finished-at="2022-03-03T10:38:22 PST" duration-ms="8480" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyRegistartionWithInvalidEmail -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.qa.testscripts.LoginTest@3a93b025]" started-at="2022-03-03T10:38:22 PST" name="tearDown" finished-at="2022-03-03T10:38:23 PST" duration-ms="1533" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
       </class> <!-- com.qa.testscripts.LoginTest -->
     </test> <!-- LoginTest -->
-    <test started-at="2022-03-03T10:37:27 PST" name="RegistrationTest" finished-at="2022-03-03T10:38:43 PST" duration-ms="75954">
+    <test started-at="2022-03-03T14:30:59 PST" name="RegistrationTest" finished-at="2022-03-03T14:31:09 PST" duration-ms="9643">
       <class name="com.qa.testscripts.RegistrationTest">
-        <test-method signature="verifyPageTitle()[pri:0, instance:com.qa.testscripts.RegistrationTest@1d296da]" started-at="2022-03-03T10:37:27 PST" name="verifyPageTitle" finished-at="2022-03-03T10:37:43 PST" duration-ms="16185" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyPageTitle -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.qa.testscripts.RegistrationTest@1d296da]" started-at="2022-03-03T10:37:43 PST" name="tearDown" finished-at="2022-03-03T10:37:46 PST" duration-ms="2526" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method signature="verifyRegistartionWithInvalidEmail()[pri:0, instance:com.qa.testscripts.RegistrationTest@1d296da]" started-at="2022-03-03T10:37:46 PST" name="verifyRegistartionWithInvalidEmail" finished-at="2022-03-03T10:37:55 PST" duration-ms="9536" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyRegistartionWithInvalidEmail -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.qa.testscripts.RegistrationTest@1d296da]" started-at="2022-03-03T10:37:55 PST" name="tearDown" finished-at="2022-03-03T10:37:58 PST" duration-ms="2054" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method signature="verifyRegistartionWithValidCredentials(java.util.HashMap)[pri:0, instance:com.qa.testscripts.RegistrationTest@1d296da]" started-at="2022-03-03T10:37:58 PST" name="verifyRegistartionWithValidCredentials" data-provider="registrationData" finished-at="2022-03-03T10:38:15 PST" duration-ms="17645" status="PASS">
+        <test-method signature="verifyRegistartionWithValidCredentials(java.util.HashMap)[pri:0, instance:com.qa.testscripts.RegistrationTest@5bf0d49]" started-at="2022-03-03T14:30:59 PST" name="verifyRegistartionWithValidCredentials" data-provider="registrationData" finished-at="2022-03-03T14:31:09 PST" duration-ms="9496" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -129,159 +77,54 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyRegistartionWithValidCredentials -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.qa.testscripts.RegistrationTest@1d296da]" started-at="2022-03-03T10:38:15 PST" name="tearDown" finished-at="2022-03-03T10:38:21 PST" duration-ms="5309" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method signature="verifyRegistrationWithExistingUser(java.util.HashMap)[pri:0, instance:com.qa.testscripts.RegistrationTest@1d296da]" started-at="2022-03-03T10:38:21 PST" name="verifyRegistrationWithExistingUser" data-provider="registrationData" finished-at="2022-03-03T10:38:32 PST" duration-ms="11534" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[{country=usa, firstname=j, address=abc street, city=santa clara, mobile=1234, lastname=j, zipcode=95051, password=test@123, sno=1, name=jj, state=ca, email=jj@j.com}]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyRegistrationWithExistingUser -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.qa.testscripts.RegistrationTest@1d296da]" started-at="2022-03-03T10:38:32 PST" name="tearDown" finished-at="2022-03-03T10:38:34 PST" duration-ms="1249" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method signature="verifySignUpWithEmptyCredentials()[pri:0, instance:com.qa.testscripts.RegistrationTest@1d296da]" started-at="2022-03-03T10:38:34 PST" name="verifySignUpWithEmptyCredentials" finished-at="2022-03-03T10:38:42 PST" duration-ms="8063" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifySignUpWithEmptyCredentials -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.qa.testscripts.RegistrationTest@1d296da]" started-at="2022-03-03T10:38:42 PST" name="tearDown" finished-at="2022-03-03T10:38:43 PST" duration-ms="1310" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
       </class> <!-- com.qa.testscripts.RegistrationTest -->
     </test> <!-- RegistrationTest -->
-    <test started-at="2022-03-03T10:37:27 PST" name="SearchTest" finished-at="2022-03-03T10:40:33 PST" duration-ms="186138">
-      <class name="com.qa.testrunner.TestRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:com.qa.testrunner.TestRunner@62ddbd7e]" started-at="2022-03-03T10:38:45 PST" name="setUpClass" finished-at="2022-03-03T10:38:46 PST" duration-ms="672" status="PASS">
+    <test started-at="2022-03-03T14:31:09 PST" name="SearchTest" finished-at="2022-03-03T14:32:33 PST" duration-ms="84087">
+      <class name="com.qa.testscripts.BrandProductTest">
+        <test-method signature="verifyAllBrandsAreListed()[pri:0, instance:com.qa.testscripts.BrandProductTest@6ed3ccb2]" started-at="2022-03-03T14:31:51 PST" name="verifyAllBrandsAreListed" finished-at="2022-03-03T14:32:02 PST" duration-ms="11017" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyAllBrandsAreListed -->
+        <test-method signature="verifyProductCountUnderEachBrands(java.lang.String)[pri:0, instance:com.qa.testscripts.BrandProductTest@6ed3ccb2]" started-at="2022-03-03T14:32:02 PST" name="verifyProductCountUnderEachBrands" data-provider="brandNameList" finished-at="2022-03-03T14:32:12 PST" duration-ms="9267" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@fd07cbb]]>
+                <![CDATA[Polo]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.qa.testrunner.TestRunner@62ddbd7e]" started-at="2022-03-03T10:38:46 PST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-03-03T10:38:53 PST" duration-ms="7751" status="PASS">
+        </test-method> <!-- verifyProductCountUnderEachBrands -->
+        <test-method signature="verifyProductCountUnderEachBrands(java.lang.String)[pri:0, instance:com.qa.testscripts.BrandProductTest@6ed3ccb2]" started-at="2022-03-03T14:32:12 PST" name="verifyProductCountUnderEachBrands" data-provider="brandNameList" finished-at="2022-03-03T14:32:21 PST" duration-ms="9745" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA["Search with valid Search Text"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Optional[Search]"]]>
+                <![CDATA[Madame]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.qa.testrunner.TestRunner@62ddbd7e]" started-at="2022-03-03T10:38:53 PST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-03-03T10:39:01 PST" duration-ms="7804" status="PASS">
+        </test-method> <!-- verifyProductCountUnderEachBrands -->
+        <test-method signature="verifyProductCountUnderEachBrands(java.lang.String)[pri:0, instance:com.qa.testscripts.BrandProductTest@6ed3ccb2]" started-at="2022-03-03T14:32:21 PST" name="verifyProductCountUnderEachBrands" data-provider="brandNameList" finished-at="2022-03-03T14:32:33 PST" duration-ms="11465" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA["Search with valid Search Text"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Optional[Search]"]]>
+                <![CDATA[H&M]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.qa.testrunner.TestRunner@62ddbd7e]" started-at="2022-03-03T10:39:01 PST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-03-03T10:39:39 PST" duration-ms="37407" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["Search with invalid Text"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Optional[Search]"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.qa.testrunner.TestRunner@62ddbd7e]" started-at="2022-03-03T10:39:39 PST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-03-03T10:40:16 PST" duration-ms="37315" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["Search with invalid Text"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Optional[Search]"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.qa.testrunner.TestRunner@62ddbd7e]" started-at="2022-03-03T10:40:16 PST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-03-03T10:40:25 PST" duration-ms="9394" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["Search with Empty Text"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Optional[Search]"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.qa.testrunner.TestRunner@62ddbd7e]" started-at="2022-03-03T10:40:25 PST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-03-03T10:40:33 PST" duration-ms="7793" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["Verify whether search text box and search button are shown in UI"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Optional[Search]"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:com.qa.testrunner.TestRunner@62ddbd7e]" started-at="2022-03-03T10:40:33 PST" name="tearDownClass" finished-at="2022-03-03T10:40:33 PST" duration-ms="34" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDownClass -->
-      </class> <!-- com.qa.testrunner.TestRunner -->
+        </test-method> <!-- verifyProductCountUnderEachBrands -->
+      </class> <!-- com.qa.testscripts.BrandProductTest -->
       <class name="com.qa.testscripts.CategoryProductTest">
-        <test-method signature="verifyAllCategoryIsShown()[pri:0, instance:com.qa.testscripts.CategoryProductTest@7eac9008]" started-at="2022-03-03T10:37:27 PST" name="verifyAllCategoryIsShown" finished-at="2022-03-03T10:37:45 PST" duration-ms="17731" status="PASS">
+        <test-method signature="verifyAllCategoryIsShown()[pri:0, instance:com.qa.testscripts.CategoryProductTest@74e52ef6]" started-at="2022-03-03T14:31:09 PST" name="verifyAllCategoryIsShown" finished-at="2022-03-03T14:31:14 PST" duration-ms="5574" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyAllCategoryIsShown -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.qa.testscripts.CategoryProductTest@7eac9008]" started-at="2022-03-03T10:37:45 PST" name="tearDown" finished-at="2022-03-03T10:37:46 PST" duration-ms="1344" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method signature="verifyAllSubCategoryIsShown(java.lang.String,[Ljava.lang.String;)[pri:0, instance:com.qa.testscripts.CategoryProductTest@7eac9008]" started-at="2022-03-03T10:37:46 PST" name="verifyAllSubCategoryIsShown" data-provider="categoryData" finished-at="2022-03-03T10:37:56 PST" duration-ms="10001" status="PASS">
+        <test-method signature="verifyAllSubCategoryIsShown(java.lang.String,[Ljava.lang.String;)[pri:0, instance:com.qa.testscripts.CategoryProductTest@74e52ef6]" started-at="2022-03-03T14:31:14 PST" name="verifyAllSubCategoryIsShown" data-provider="categoryData" finished-at="2022-03-03T14:31:21 PST" duration-ms="6150" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -290,18 +133,14 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[[Ljava.lang.String;@22f43085]]>
+                <![CDATA[[Ljava.lang.String;@6318ff9]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyAllSubCategoryIsShown -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.qa.testscripts.CategoryProductTest@7eac9008]" started-at="2022-03-03T10:37:56 PST" name="tearDown" finished-at="2022-03-03T10:37:57 PST" duration-ms="1203" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method signature="verifyAllSubCategoryIsShown(java.lang.String,[Ljava.lang.String;)[pri:0, instance:com.qa.testscripts.CategoryProductTest@7eac9008]" started-at="2022-03-03T10:37:57 PST" name="verifyAllSubCategoryIsShown" data-provider="categoryData" finished-at="2022-03-03T10:38:09 PST" duration-ms="11968" status="PASS">
+        <test-method signature="verifyAllSubCategoryIsShown(java.lang.String,[Ljava.lang.String;)[pri:0, instance:com.qa.testscripts.CategoryProductTest@74e52ef6]" started-at="2022-03-03T14:31:21 PST" name="verifyAllSubCategoryIsShown" data-provider="categoryData" finished-at="2022-03-03T14:31:27 PST" duration-ms="6456" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -310,18 +149,14 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[[Ljava.lang.String;@22af912c]]>
+                <![CDATA[[Ljava.lang.String;@5655278d]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyAllSubCategoryIsShown -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.qa.testscripts.CategoryProductTest@7eac9008]" started-at="2022-03-03T10:38:09 PST" name="tearDown" finished-at="2022-03-03T10:38:11 PST" duration-ms="1631" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method signature="verifyAllSubCategoryIsShown(java.lang.String,[Ljava.lang.String;)[pri:0, instance:com.qa.testscripts.CategoryProductTest@7eac9008]" started-at="2022-03-03T10:38:11 PST" name="verifyAllSubCategoryIsShown" data-provider="categoryData" finished-at="2022-03-03T10:38:21 PST" duration-ms="9773" status="PASS">
+        <test-method signature="verifyAllSubCategoryIsShown(java.lang.String,[Ljava.lang.String;)[pri:0, instance:com.qa.testscripts.CategoryProductTest@74e52ef6]" started-at="2022-03-03T14:31:27 PST" name="verifyAllSubCategoryIsShown" data-provider="categoryData" finished-at="2022-03-03T14:31:36 PST" duration-ms="9026" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -330,18 +165,14 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[[Ljava.lang.String;@67d5c780]]>
+                <![CDATA[[Ljava.lang.String;@69b80603]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyAllSubCategoryIsShown -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.qa.testscripts.CategoryProductTest@7eac9008]" started-at="2022-03-03T10:38:21 PST" name="tearDown" finished-at="2022-03-03T10:38:22 PST" duration-ms="1647" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method signature="verifySubCategorySearch(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.testscripts.CategoryProductTest@7eac9008]" started-at="2022-03-03T10:38:22 PST" name="verifySubCategorySearch" data-provider="subcategoryData" finished-at="2022-03-03T10:38:33 PST" duration-ms="10175" status="PASS">
+        <test-method signature="verifySubCategorySearch(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.testscripts.CategoryProductTest@74e52ef6]" started-at="2022-03-03T14:31:36 PST" name="verifySubCategorySearch" data-provider="subcategoryData" finished-at="2022-03-03T14:31:44 PST" duration-ms="7503" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -362,11 +193,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifySubCategorySearch -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.qa.testscripts.CategoryProductTest@7eac9008]" started-at="2022-03-03T10:38:33 PST" name="tearDown" finished-at="2022-03-03T10:38:34 PST" duration-ms="1341" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method signature="verifySubCategorySearch(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.testscripts.CategoryProductTest@7eac9008]" started-at="2022-03-03T10:38:34 PST" name="verifySubCategorySearch" data-provider="subcategoryData" finished-at="2022-03-03T10:38:44 PST" duration-ms="9758" status="PASS">
+        <test-method signature="verifySubCategorySearch(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.testscripts.CategoryProductTest@74e52ef6]" started-at="2022-03-03T14:31:44 PST" name="verifySubCategorySearch" data-provider="subcategoryData" finished-at="2022-03-03T14:31:51 PST" duration-ms="7856" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -387,10 +214,6 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifySubCategorySearch -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.qa.testscripts.CategoryProductTest@7eac9008]" started-at="2022-03-03T10:38:44 PST" name="tearDown" finished-at="2022-03-03T10:38:45 PST" duration-ms="1281" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
       </class> <!-- com.qa.testscripts.CategoryProductTest -->
     </test> <!-- SearchTest -->
   </suite> <!-- Suite -->

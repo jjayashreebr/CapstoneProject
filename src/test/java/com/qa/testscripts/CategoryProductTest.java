@@ -29,7 +29,7 @@ public class CategoryProductTest extends BaseDriver {
 	 * click on products link in homepage Then : It shows all the categories
 	 */
 
-	@Test(groups = { "frontend", "category" })
+	@Test(groups = { "frontend", "category" ,"regression"})
 	public void verifyAllCategoryIsShown() throws IOException {
 		 driver = BaseDriver.getWebDriver();
 		ProductPage page = new AutomationExcerciseHomePage(driver).open().clickProductLink();
@@ -44,7 +44,7 @@ public class CategoryProductTest extends BaseDriver {
 	 * clicks in a <category> Then: it shows all the subcategories
 	 */
 
-	@Test(groups = { "frontend", "category" }, dataProvider = "categoryData")
+	@Test(groups = { "frontend", "category","regression" }, dataProvider = "categoryData")
 	public void verifyAllSubCategoryIsShown(String category, String[] subCategory) throws IOException {
 		 driver = BaseDriver.getWebDriver();
 		ProductPage page = new AutomationExcerciseHomePage(driver).open().clickProductLink();
@@ -69,10 +69,10 @@ public class CategoryProductTest extends BaseDriver {
 	/*
 	 * 3. Verify that sub category in “women” is clicked ,it should corresponding
 	 * search page title. Given : when user click on product link in homepage When :
-	 * user clicks in a <subcategory> Then: it shows corresponding subcategory page
+	 * user clicks in a "subcategory" Then: it shows corresponding subcategory page
 	 */
 
-	@Test(groups = { "frontend", "category" }, dataProvider = "subcategoryData")
+	@Test(groups = { "frontend", "category","regression" }, dataProvider = "subcategoryData")
 	public void verifySubCategorySearch(String category, String subCategory, String expectedTitle) throws IOException, InterruptedException {
 		 driver = BaseDriver.getWebDriver();
 		ProductPage page = new AutomationExcerciseHomePage(driver).open().clickProductLink();

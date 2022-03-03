@@ -3,12 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.qa.testscripts.CategoryModuleTest">
+      <class name="com.qa.testscripts.BrandProductTest">
         <methods>
-          <include name="verifySubCategorySearch" invocation-numbers="0"/>
+          <include name="verifyBrandListing" invocation-numbers="1"/>
           <include name="tearDown"/>
         </methods>
-      </class> <!-- com.qa.testscripts.CategoryModuleTest -->
+      </class> <!-- com.qa.testscripts.BrandProductTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

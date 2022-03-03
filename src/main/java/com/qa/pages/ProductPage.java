@@ -22,6 +22,9 @@ public class ProductPage extends ProductPageLocators {
 	public List<WebElement> getProductList(){
 		return driver.findElements(RESULT_LIST);
 	}
+	public List<WebElement> getBrandList(){
+		return driver.findElements(BRAND_LIST);
+	}
 	
 	public List<WebElement> getCategoryList(){
 		return driver.findElements(CATEGORY_LIST);

@@ -11,5 +11,7 @@ public class ProductPageLocators {
 
 	public static final By RESULT_LIST = By.xpath("//div[@id='cartModal']/following-sibling::div/div/div/div/p");
 
+	
+	public static final By BRAND_LIST = By.xpath("//*[contains(@href,'/brand_products')]");
 	public static final By CATEGORY_LIST = By.xpath("//h2[text()='Category']/following-sibling::div[@id='accordian']  //h4/a");
 }

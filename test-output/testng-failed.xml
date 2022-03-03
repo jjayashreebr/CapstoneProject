@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="Default test(failed)">
+<suite parallel="tests" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" parallel="tests" name="RegistrationTest(failed)">
+    <groups>
+      <run>
+        <include name="regression"/>
+      </run>
+    </groups>
     <classes>
-      <class name="com.qa.testscripts.CategoryModuleTest">
+      <class name="com.qa.testscripts.RegistrationTest">
         <methods>
-          <include name="verifySubCategorySearch" invocation-numbers="0"/>
-          <include name="tearDown"/>
+          <include name="verifyRegistartionWithValidCredentials" invocation-numbers="0"/>
         </methods>
-      </class> <!-- com.qa.testscripts.CategoryModuleTest -->
+      </class> <!-- com.qa.testscripts.RegistrationTest -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- RegistrationTest(failed) -->
+</suite> <!-- Failed suite [Suite] -->

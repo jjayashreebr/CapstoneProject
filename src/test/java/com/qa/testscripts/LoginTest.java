@@ -32,7 +32,7 @@ public class LoginTest extends BaseDriver {
 	 *
 	 * then: field validation error must be displayed
 	 */
-	@Test(groups = { "frontend" })
+	@Test(groups = { "frontend" ,"login"})
 	public void verifyLoginWithEmptyCredentials() throws IOException {
 		 driver = BaseDriver.getWebDriver();
 
@@ -63,7 +63,7 @@ public class LoginTest extends BaseDriver {
 	 *
 	 * then: field validation error must be displayed
 	 */
-	@Test(groups = { "frontend" })
+	@Test(groups = { "frontend","login" })
 	public void verifyRegistartionWithInvalidEmail() throws IOException {
 		 driver = BaseDriver.getWebDriver();
 
@@ -110,7 +110,7 @@ public class LoginTest extends BaseDriver {
 	 * response must be 200.
 	 */
 
-	@Test(dataProvider = "registrationData")
+	@Test(dataProvider = "registrationData",groups= {"login","regression"})
 	public void verifyLoginWithValidCredential(HashMap<String, Object> map) throws IOException {
 		String bodyText = BodyConstruction.bodyForCreateUser(map);
 		Map<String, String> header = new HashMap<>();
@@ -149,7 +149,7 @@ public class LoginTest extends BaseDriver {
 	 * 
 	 */
 
-	@Test
+	@Test(groups= {"login"})
 	public void verifyLoginWithEmptyEmailCredential() throws IOException {
 
 		Map<String, String> header = new HashMap<>();
@@ -176,7 +176,7 @@ public class LoginTest extends BaseDriver {
 	 * https://automationexercise.com/api/verifyLogin is sent when : delete request
 	 * is made then : response must be 405
 	 */
-	@Test
+	@Test(groups= {"login"})
 	public void verifyDeleteLogin() throws IOException {
 		Map<String, String> header = new HashMap<>();
 		header.put("Accept", "application/json");
@@ -198,7 +198,7 @@ public class LoginTest extends BaseDriver {
 	 * response must be 404.
 	 */
 
-	@Test
+	@Test(groups= {"login"})
 	public void verifyLoginWithInvalidCredentials() throws IOException {
 		Map<String, String> header = new HashMap<>();
 		header.put("Accept", "application/json");
@@ -220,7 +220,7 @@ public class LoginTest extends BaseDriver {
 	 * When – valid email and password is given 
 	 * Then- it should show user name in logged in as .
 	 */
-	@Test(dataProvider = "registrationData")
+	@Test(dataProvider = "registrationData",groups= {"login","regression"})
 	public void verifyLoginShowsProperLoggedInMessage(HashMap<String, Object> map) throws IOException {
 		String bodyText = BodyConstruction.bodyForCreateUser(map);
 		Map<String, String> header = new HashMap<>();
