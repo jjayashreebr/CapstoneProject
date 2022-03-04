@@ -10,15 +10,15 @@ import java.util.Set;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
+
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 import com.qa.pages.AutomationExcerciseHomePage;
-import com.qa.pages.LoginPage;
 import com.qa.pages.RegistrationPage;
+import com.qa.pages.SignUpPage;
 import com.qa.pages.SuccessAccountCreatedPage;
 import com.qa.utils.BaseDriver;
 import com.qa.utils.BodyConstruction;
@@ -29,9 +29,13 @@ public class RegistrationTest extends BaseDriver {
 	@Test
 	public void verifyPageTitle() throws IOException {
 		WebDriver driver = BaseDriver.getWebDriver();
-		LoginPage lpage = new AutomationExcerciseHomePage(driver).open().clickSignInLink();
+		SignUpPage signUpPage = new AutomationExcerciseHomePage(driver)
+			.open()
+			.clickSignInLink()
+			.getSignUpModule();
+			
 
-		Assert.assertEquals(lpage.getTitle(), getContent("loginpage", "pagetitle"));
+		Assert.assertEquals(signUpPage.getTitle(), getContent("signuppage", "pagetitle"));
 	}
 
 	/*
@@ -45,21 +49,24 @@ public class RegistrationTest extends BaseDriver {
 	public void verifySignUpWithEmptyCredentials() throws IOException {
 		WebDriver driver = BaseDriver.getWebDriver();
 
-		LoginPage lpage = new AutomationExcerciseHomePage(driver).open().clickSignInLink();
+		SignUpPage signUpPage = new AutomationExcerciseHomePage(driver)
+				.open()
+				.clickSignInLink()
+				.getSignUpModule();
 
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		SoftAssert softAssert = new SoftAssert();
 
-		WebElement name = lpage.getNameTextBox();
+		WebElement name = signUpPage.getNameTextBox();
 		String actualUserNameValidationMessage = (String) js.executeScript("return arguments[0].validationMessage;",
 				name);
-		String expectedName = getContent("loginpage", "validation_msg");
+		String expectedName = getContent("signuppage", "validation_msg");
 		softAssert.assertEquals(actualUserNameValidationMessage, expectedName);
 
-		WebElement email = lpage.getEmailTextBox();
+		WebElement email = signUpPage.getEmailTextBox();
 		String actualEmailValidationMessage = (String) js.executeScript("return arguments[0].validationMessage;",
 				email);
-		String expectedEmail = getContent("loginpage", "validation_msg");
+		String expectedEmail = getContent("signuppage", "validation_msg");
 		softAssert.assertEquals(actualEmailValidationMessage, expectedEmail);
 
 		softAssert.assertAll();
@@ -76,16 +83,19 @@ public class RegistrationTest extends BaseDriver {
 	public void verifyRegistartionWithInvalidEmail() throws IOException {
 		WebDriver driver = BaseDriver.getWebDriver();
 
-		LoginPage lpage = new AutomationExcerciseHomePage(driver).open().clickSignInLink();
-
+		SignUpPage signUpPage = new AutomationExcerciseHomePage(driver)
+				.open()
+				.clickSignInLink()
+				.getSignUpModule();
+		
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 
-		lpage.getNameTextBox().sendKeys("James");
+		signUpPage.setNameTextBox("James");
 
-		WebElement email = lpage.getEmailTextBox();
-		email.sendKeys("JamesBond");
+		WebElement email = signUpPage.getEmailTextBox();
+		signUpPage.setEmailTextBox("JamesBond");
 
-		lpage.clickCreateAccount();
+		signUpPage.clickCreateAccount();
 
 		String actualEmailValidationMessage = (String) js.executeScript("return arguments[0].validationMessage;",
 				email);
@@ -109,50 +119,41 @@ public class RegistrationTest extends BaseDriver {
 	 */
 
 	@Test(dataProvider = "registrationData",groups = { "frontend", "regression" })
-	public void verifyRegistartionWithValidCredentials(HashMap<String, Object> map) throws IOException, InterruptedException {
+	public void verifyRegistartionWithValidCredentials(HashMap<String, Object> registrationData) throws IOException, InterruptedException {
 
 		WebDriver driver = BaseDriver.getWebDriver();
 
-		LoginPage lpage = new AutomationExcerciseHomePage(driver).open().clickSignInLink();
-		String name = map.get("name").toString();
-		String email = map.get("email").toString();
-		String firstName = map.get("firstname").toString();
-		String password =map.get("password").toString();
+		SignUpPage signUpPage = new AutomationExcerciseHomePage(driver)
+				.open()
+				.clickSignInLink()
+				.getSignUpModule();
+		
+		String name = getValue(registrationData, "name");
+		String email = getValue(registrationData,"email");
+		String firstName =getValue(registrationData,"firstname");
+		String password =getValue(registrationData,"password");
 
-		lpage.getNameTextBox().sendKeys(name);
-		lpage.getEmailTextBox().sendKeys(email);
-		RegistrationPage rpage = lpage.clickCreateAccount();
+		RegistrationPage rpage =  signUpPage
+		                           .setNameTextBox(name)
+		                           .setEmailTextBox(email)
+		                           .clickCreateAccount();
+		
 
-		//Assert.assertEquals(rpage.getTitle(), getContent("signuppage", "pagetitle"));
+	
+		rpage
+		.setPasswordTextBox(password)
+        .setFirstTNameTextBox(firstName)
+        .setLastNameTextBox(getValue(registrationData,"lastname"));
 
-		Assert.assertEquals(rpage.getNameTextBox().getAttribute("value"), name);
-
-		Assert.assertEquals(rpage.getEmailTextBox().getAttribute("value"), email);
-
-		rpage.getPasswordTextBox().sendKeys(password);
-
-		rpage.getFirstTNameTextBox().sendKeys(firstName);
-
-		rpage.getLastNameTextBox().sendKeys(map.get("lastname").toString());
-
-		rpage.getAddressTextBox().sendKeys(map.get("address").toString());
-
-		Select select = new Select(rpage.getCountrySelectBox());
-		if(map.get("country").toString().equalsIgnoreCase("USA"))
-		    {select.selectByIndex(1);}
-
-		rpage.getStateTextBox().sendKeys(map.get("state").toString());
-
-		rpage.getCityTextBox().sendKeys(map.get("city").toString());
-
-		rpage.getZipcodeTextBox().sendKeys(map.get("zipcode").toString());
-
-		rpage.getMobileTextBox().sendKeys(map.get("mobile").toString());
+		rpage
+		.setAddressTextBox(getValue(registrationData,"address"))
+		.setCityTextBox(getValue(registrationData,"city"))
+		.setStateTextBox(getValue(registrationData,"state"))
+	    .setCountrySelectBox(getValue(registrationData,"country"))
+        .setZipcodeTextBox(getValue(registrationData,"zipcode"))
+		.setMobileTextBox(getValue(registrationData,"mobile"));
 
 		SuccessAccountCreatedPage success = rpage.clickCreateAccount();
-
-		System.out.println(success.getSuccessMsgBox());
-
 		AutomationExcerciseHomePage homepage=success.clickContinueButton();
 		Assert.assertEquals(homepage.getcustomerName(),name);
 		homepage.clickLogoutLink();
@@ -178,7 +179,6 @@ public class RegistrationTest extends BaseDriver {
 		try {
 			customerInfo = com.qa.utils.ExcelHelper.getExcelData();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		Set<Integer> keyid = customerInfo.keySet();
@@ -232,13 +232,18 @@ public class RegistrationTest extends BaseDriver {
 
 		WebDriver driver = BaseDriver.getWebDriver();
 
-		LoginPage lpage = new AutomationExcerciseHomePage(driver).open().clickSignInLink();
+		SignUpPage signUpPage = new AutomationExcerciseHomePage(driver)
+				.open()
+				.clickSignInLink()
+				.getSignUpModule();
 
 
-		lpage.getNameTextBox().sendKeys(name);
-		lpage.getEmailTextBox().sendKeys(email);
-		lpage.clickCreateAccount();
-		Assert.assertEquals(lpage.getValidationMsg(),getContent("signuppage", "existing_email_validation_msg"));
+		 signUpPage
+         .setNameTextBox(name)
+         .setEmailTextBox(email)
+         .clickCreateAccount();
+		 
+		Assert.assertEquals(signUpPage.getValidationMsg(),getContent("signuppage", "existing_email_validation_msg"));
 		
 		//delete account - clean up
 		 bodyText= "email="+email+"&password="+password;
@@ -251,6 +256,10 @@ public class RegistrationTest extends BaseDriver {
 		.extract().response().asString();
         System.out.println(response);
 
+	}
+	
+	public static String getValue(HashMap<String, Object> map, String key) {
+		return map.get(key).toString();
 	}
 
 }

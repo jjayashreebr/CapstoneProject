@@ -8,8 +8,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import java.util.stream.Collectors;
-
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -81,60 +79,34 @@ public class BrandProductTest extends BaseDriver {
 		driver = BaseDriver.getWebDriver();
 		ProductPage page = new AutomationExcerciseHomePage(driver).open().clickProductLink();
 
-		List<WebElement> myList = page.getBrandList();
-		List<String> newList = myList.stream()
-				.map(s -> s.getText().replaceAll("[\\[\\](){}]", "").replaceAll("[\n\t]", " "))
-				.collect(Collectors.toList());
-		// Assert.assertTrue(myList.size() == 3);
-		//System.out.println(newList.get(0));
-		
-		String actualCount=null;
-	    for(String temp:newList) {
-	    	String[] tp =temp.split(" ");
-	    	if(tp[1].equals(brand.toUpperCase())){
-	    		actualCount=tp[0];
-	    		break;
-	    	}
-	    }
-	    
-	   Assert.assertEquals(actualCount, String.valueOf(count)) ;
-
-	}
+		String actualCount = page.getBrandListCount(brand);
+	    Assert.assertEquals(actualCount, String.valueOf(count)) ;
+    }
 
 	@DataProvider(name = "brandNameList")
 	public String[] getBrandName() {
-		String[] list = { "Polo","Madame","H&M"};
+		String[] list = { "Polo","Madame","HM"};
 		return list;
 	}
 	
-	/*3. Verify that barnd in “polo” is clicked ,it should corresponding product page title.*/
+	/*3. Verify that brand in “polo” is clicked ,it should corresponding product page title.*/
 	@Test(groups = { "frontend", "brand","regresssion" },dataProvider="brandTitleVerificationData")
 	public void verifyBrandListing(String brand,String expectedTitle) throws IOException, InterruptedException {
 		driver = BaseDriver.getWebDriver();
-		ProductPage page = new AutomationExcerciseHomePage(driver).open().clickProductLink();
-		List<WebElement> myList = page.getBrandList();
-	
+		ProductPage page = new AutomationExcerciseHomePage(driver)
+				.open()
+				.clickProductLink();
+			
 		String actualTitle=null;
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,500)");
-	     Boolean flag= false;
-	    
-	     for(WebElement element : myList) {
-	    	 if(element.getText().contains(brand)) {
-	    		 element.click();
-	    		 flag=true;
-	    		 break;
-	    	 }
-	     }
-	     
-	     if(flag) {
-			
-			 actualTitle= page.getPageTitleChange();
-		}
-		
-		Assert.assertEquals(actualTitle, expectedTitle);
-        
-        }
+	 
+	     actualTitle =  page
+	    		 .getBrandProductPageTitle(brand)
+	    		 .getPageTitleChange();
+	     Assert.assertEquals(actualTitle, expectedTitle);
+         }
+	
 	
 	@DataProvider(name = "brandTitleVerificationData")
 	public Object[][] brandTitleVerificationData() {

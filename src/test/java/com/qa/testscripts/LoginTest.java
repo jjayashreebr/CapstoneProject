@@ -36,18 +36,21 @@ public class LoginTest extends BaseDriver {
 	public void verifyLoginWithEmptyCredentials() throws IOException {
 		 driver = BaseDriver.getWebDriver();
 
-		LoginPage lpage = new AutomationExcerciseHomePage(driver).open().clickSignInLink();
+		LoginPage loginPage = new AutomationExcerciseHomePage(driver)
+				.open()
+				.clickSignInLink()
+				.getLoginModule();
 
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		SoftAssert softAssert = new SoftAssert();
 
-		WebElement name = lpage.getEmailLoginTextBox();
+		WebElement name = loginPage.getEmailLoginTextBox();
 		String actualUserNameValidationMessage = (String) js.executeScript("return arguments[0].validationMessage;",
 				name);
 		String expectedName = getContent("loginpage", "validation_msg");
 		softAssert.assertEquals(actualUserNameValidationMessage, expectedName);
 
-		WebElement email = lpage.getPasswordTextBox();
+		WebElement email = loginPage.getPasswordTextBox();
 		String actualEmailValidationMessage = (String) js.executeScript("return arguments[0].validationMessage;",
 				email);
 		String expectedEmail = getContent("loginpage", "validation_msg");
@@ -67,16 +70,19 @@ public class LoginTest extends BaseDriver {
 	public void verifyRegistartionWithInvalidEmail() throws IOException {
 		 driver = BaseDriver.getWebDriver();
 
-		LoginPage lpage = new AutomationExcerciseHomePage(driver).open().clickSignInLink();
+		 LoginPage loginPage = new AutomationExcerciseHomePage(driver)
+				 .open()
+				 .clickSignInLink()
+				 .getLoginModule();
 
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 
-		WebElement email = lpage.getEmailLoginTextBox();
-		email.sendKeys("JamesBond");
+		WebElement email = loginPage.getEmailLoginTextBox();
+		loginPage.setEmailLoginTextBox("JamesBond");
 
-		lpage.getPasswordTextBox().sendKeys("James");
+		loginPage.setPasswordTextBox("James");
 
-		lpage.clickLogin();
+		loginPage.clickLogin();
 
 		String actualEmailValidationMessage = (String) js.executeScript("return arguments[0].validationMessage;",
 				email);
@@ -236,10 +242,14 @@ public class LoginTest extends BaseDriver {
 		System.out.println(response);
 		
 		 driver = BaseDriver.getWebDriver();
-		LoginPage lpage = new AutomationExcerciseHomePage(driver).open().clickSignInLink();
-        lpage.getEmailLoginTextBox().sendKeys(email);
-		lpage.getPasswordTextBox().sendKeys(password);
-		AutomationExcerciseHomePage homepage=lpage.clickLogin();
+		 LoginPage loginPage = new AutomationExcerciseHomePage(driver)
+				 .open()
+				 .clickSignInLink()
+				 .getLoginModule();
+		 AutomationExcerciseHomePage homepage=
+				 loginPage.setEmailLoginTextBox(email)
+		                  .setPasswordTextBox(password)
+		                  .clickLogin();
 		Assert.assertEquals(homepage.getcustomerName(),name);
 		homepage.clickLogoutLink();
 		

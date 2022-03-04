@@ -1,7 +1,6 @@
 package com.qa.testscripts;
 
 import java.io.IOException;
-
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -21,6 +20,7 @@ import com.qa.pages.CategoryProductPage;
 import com.qa.pages.ProductPage;
 import com.qa.utils.BaseDriver;
 
+
 public class CategoryProductTest extends BaseDriver {
 
 	WebDriver driver;
@@ -35,7 +35,7 @@ public class CategoryProductTest extends BaseDriver {
 		ProductPage page = new AutomationExcerciseHomePage(driver).open().clickProductLink();
 		List<WebElement> myList = page.getCategoryList();
 		myList.stream().map(s -> s.getText()).forEach(System.out::println);
-		Assert.assertTrue(myList.size() == 3);
+		Assert.assertTrue(myList.size() == 30);
 	}
 
 	/*
@@ -46,25 +46,17 @@ public class CategoryProductTest extends BaseDriver {
 
 	@Test(groups = { "frontend", "category","regression" }, dataProvider = "categoryData")
 	public void verifyAllSubCategoryIsShown(String category, String[] subCategory) throws IOException {
-		 driver = BaseDriver.getWebDriver();
-		ProductPage page = new AutomationExcerciseHomePage(driver).open().clickProductLink();
-		List<WebElement> myList = page.getCategoryList();
+		driver = BaseDriver.getWebDriver();
+		ProductPage page = new AutomationExcerciseHomePage(driver)
+				.open()
+				.clickProductLink();
+
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,500)");
-		List<WebElement> mySubList = null;
 
-		for (WebElement ele : myList) {
-			String[] linkText = ele.getAttribute("href").split("#");
-			if (ele.getText().equals(category)) {
-				ele.click();
-
-				mySubList = page.getSubCategoryList(linkText[1]);
-				
-				Assert.assertEquals(subCategory.length, mySubList.size());
-			}
-		}
-
-	}
+		int actual= page.getSubCategoryCount(category);
+		Assert.assertEquals(actual,subCategory.length);
+    }
 
 	/*
 	 * 3. Verify that sub category in “women” is clicked ,it should corresponding
@@ -74,46 +66,22 @@ public class CategoryProductTest extends BaseDriver {
 
 	@Test(groups = { "frontend", "category","regression" }, dataProvider = "subcategoryData")
 	public void verifySubCategorySearch(String category, String subCategory, String expectedTitle) throws IOException, InterruptedException {
-		 driver = BaseDriver.getWebDriver();
-		ProductPage page = new AutomationExcerciseHomePage(driver).open().clickProductLink();
-		List<WebElement> myList = page.getCategoryList();
-		CategoryProductPage cpage=null;
+		driver = BaseDriver.getWebDriver();
+		ProductPage page = new AutomationExcerciseHomePage(driver)
+				.open()
+				.clickProductLink();
+
 		String actualTitle=null;
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,500)");
-		List<WebElement> mySubList = null;
-        Boolean flag= false;
-		for (WebElement ele : myList) {
-			String[] linkText = ele.getAttribute("href").split("#");
-			System.out.println(ele.getText());
-			if (ele.getText().equals(category)) {
-				ele.click();
 
-				System.out.println(linkText[1]);
-				mySubList = page.getSubCategoryList(linkText[1]);
-				System.out.println(mySubList.size());
-				for (WebElement element : mySubList) {
-					if (element.getAttribute("innerHTML").trim().equals(subCategory)) {
-						System.out.println("inside");
-						element.click();
-						flag=true;
-						break;
-					}
-				}
-				break;
-			}
-        }
-		
-		if(flag) {
-			 cpage = new CategoryProductPage(driver);
-			 actualTitle= cpage.getCategoryPageTitle();
-		}
-		
-		Assert.assertEquals(actualTitle, expectedTitle);
+	    CategoryProductPage cpage=page.getCategoryList( category, subCategory);
+	    actualTitle= cpage.getCategoryPageTitle();
+        Assert.assertEquals(actualTitle, expectedTitle);
 
 	}
-	
-	
+
+
 
 	@DataProvider(name = "subcategoryData")
 	public Object[][] subcategoryData() {
@@ -123,12 +91,12 @@ public class CategoryProductTest extends BaseDriver {
 		return obj;
 	}
 
-	
-	
+
+
 	@DataProvider(name = "categoryData")
 	public Object[][] categoryData() {
 
-		HashMap<String, String[]> map = new HashMap<String, String[]>();
+		HashMap<String, String[]> map = new HashMap<>();
 		String[] arr1 = { "DRESS", "TOPS", "SAREE" };
 		map.put("WOMEN", arr1);
 		String[] arr2 = { "TSHIRTS", "JEANS" };
@@ -140,7 +108,7 @@ public class CategoryProductTest extends BaseDriver {
 		Iterator<Entry<String, String[]>> entriesIterator = entries.iterator();
 		int i = 0;
 		while (entriesIterator.hasNext()) {
-			Map.Entry<String, String[]> mapping = (Entry<String, String[]>) entriesIterator.next();
+			Map.Entry<String, String[]> mapping = entriesIterator.next();
 			arr[i][0] = mapping.getKey();
 			arr[i][1] = mapping.getValue();
 			i++;

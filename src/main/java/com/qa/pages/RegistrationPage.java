@@ -1,7 +1,8 @@
 package com.qa.pages;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+
+import org.openqa.selenium.support.ui.Select;
 
 import com.qa.locators.RegistrationPageLocators;
 
@@ -15,61 +16,82 @@ public class RegistrationPage extends RegistrationPageLocators {
 		return driver.getTitle();
 	}
 
-	public WebElement getEmailTextBox() {
-		return driver.findElement(EMAIL);
-	}
-
-	public WebElement getNameTextBox() {
-		return driver.findElement(CUSTOMER_NAME);
-	}
-	public WebElement getFirstTNameTextBox() {
-		return driver.findElement(FIRST_NAME);
-	}
-	public WebElement getLastNameTextBox() {
-		return driver.findElement(LAST_NAME);
-	}
-	public WebElement getCountrySelectBox() {
-		return driver.findElement(COUNTRY);
-	}
-	public WebElement getStateTextBox() {
-		return driver.findElement(STATE);
-	}
-
-	public WebElement getAddressTextBox() {
-		return driver.findElement(ADDDRESS_1);
-	}
-
-	public WebElement getCityTextBox() {
-		return driver.findElement(CITY);
-	}
-
-	public WebElement getMobileTextBox() {
-		return driver.findElement(MOBILE_PHONE);
-	}
-
-	public WebElement getZipcodeTextBox() {
-		return driver.findElement(ZIPCODE);
+	public RegistrationPage setEmailTextBox(String email) {
+		 driver.findElement(EMAIL).sendKeys(email);
+		 return new RegistrationPage(driver);
 	}
 
 
-	public WebElement getPasswordTextBox() {
-		return driver.findElement(PASSWORD);
+	
+	
+	public RegistrationPage setNameTextBox(String customerName) {
+		 driver.findElement(CUSTOMER_NAME).sendKeys(customerName);
+		 return new RegistrationPage(driver);
 	}
-	public WebElement getMonthSelectorBox() {
-		return driver.findElement(MONTHS);
+	public RegistrationPage setFirstTNameTextBox(String firstName) {
+		 driver.findElement(FIRST_NAME).sendKeys(firstName);
+		 return new RegistrationPage(driver);
 	}
-	public WebElement getDaySelectBox() {
-		return driver.findElement(DAYS);
+	public RegistrationPage setLastNameTextBox(String lastName) {
+		 driver.findElement(LAST_NAME).sendKeys(lastName);
+		return new RegistrationPage(driver);
 	}
-	public WebElement getYearSelectBox() {
-		return driver.findElement(YEARS);
+	public RegistrationPage setCountrySelectBox(String country) {
+		Select select = new Select(driver.findElement(COUNTRY));
+		if(country.equalsIgnoreCase("USA"))
+		    {select.selectByIndex(1);}
+		 return new RegistrationPage(driver);
+	}
+	public RegistrationPage setStateTextBox(String state) {
+		 driver.findElement(STATE).sendKeys(state);;
+		return new RegistrationPage(driver);
 	}
 
-	public WebElement getSpecialOfferCheckBox() {
-		return driver.findElement(SPECIAL_OFFER);
+	public RegistrationPage setAddressTextBox(String address) {
+		 driver.findElement(ADDDRESS_1).sendKeys(address);
+		 return new RegistrationPage(driver);
 	}
-	public WebElement getNewsletterSignUpBox() {
-		return driver.findElement(NEWSLETTER_SIGNUP);
+
+	public RegistrationPage setCityTextBox(String city) {
+		 driver.findElement(CITY).sendKeys(city);
+		return new RegistrationPage(driver);
+	}
+
+	public RegistrationPage setMobileTextBox(String mobile) {
+		 driver.findElement(MOBILE_PHONE).sendKeys(mobile);
+		return new RegistrationPage(driver);
+	}
+
+	public RegistrationPage setZipcodeTextBox(String zip) {
+		 driver.findElement(ZIPCODE).sendKeys(zip);
+		return new RegistrationPage(driver);
+	}
+
+
+	public RegistrationPage setPasswordTextBox(String password) {
+		 driver.findElement(PASSWORD).sendKeys(password);;
+		return new RegistrationPage(driver);
+	}
+	public RegistrationPage getMonthSelectorBox() {
+		 driver.findElement(MONTHS);
+		return new RegistrationPage(driver);
+	}
+	public RegistrationPage getDaySelectBox() {
+		 driver.findElement(DAYS);
+		return new RegistrationPage(driver);
+	}
+	public RegistrationPage getYearSelectBox() {
+		 driver.findElement(YEARS);
+		return new RegistrationPage(driver);
+	}
+
+	public RegistrationPage getSpecialOfferCheckBox() {
+		 driver.findElement(SPECIAL_OFFER);
+		 return new RegistrationPage(driver);
+	}
+	public RegistrationPage getNewsletterSignUpBox() {
+		 driver.findElement(NEWSLETTER_SIGNUP);
+		 return new RegistrationPage(driver);
 	}
 
 

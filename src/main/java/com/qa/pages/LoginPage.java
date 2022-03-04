@@ -15,6 +15,16 @@ public class LoginPage extends LoginPageLocators {
 	public String getTitle() {
 		return driver.getTitle();
 	}
+	
+	public SignUpPage getSignUpModule() {
+	 	
+	 	return new SignUpPage(driver);
+	}
+	
+	public LoginPage getLoginModule() {
+		 
+	 	return new LoginPage(driver);
+	}
 
 
 	public String getValidationMsg() {
@@ -42,6 +52,18 @@ public class LoginPage extends LoginPageLocators {
 	public AutomationExcerciseHomePage clickLogin() {
 		 driver.findElement(LOGIN_BUTTON).click();
 		 return new AutomationExcerciseHomePage(driver);
+	}
+
+	public LoginPage setEmailLoginTextBox(String string) {
+		
+		 driver.findElement(EMAIL_LOGIN_TEXT_BOX).sendKeys(string);
+		 return new LoginPage(driver);
+	}
+
+	public LoginPage setPasswordTextBox(String string) {
+		 driver.findElement(PASSWORD_TEXT_BOX).sendKeys(string);
+		 return new LoginPage(driver);
+		
 	}
 
 
