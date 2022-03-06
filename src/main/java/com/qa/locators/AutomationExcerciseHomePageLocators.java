@@ -9,5 +9,6 @@ public class AutomationExcerciseHomePageLocators {
 	public final static By PRODUCT_LINK = By.xpath("//a[contains(@href,\"products\")]");
 	public final static By LOGGED_IN_TEXT = By.cssSelector(".fa.fa-user+b");
 	public final static By LOGOUT_LINK = By.xpath("//a[contains(@href,\"logout\")]");
+	public final static By CART_LINK = By.xpath("//a[contains(@href,\"cart\")]");
 	
 }

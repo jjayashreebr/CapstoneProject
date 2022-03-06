@@ -132,19 +132,21 @@ public class ProductPage extends ProductPageLocators {
 		return new ProductPage(driver);
 	}
 
-	public ViewCartPage clickViewCart() {
-		driver.findElement(VIEW_CART_BUTTON_IN_MODEL).click();
-		return new ViewCartPage(driver);
-	}
 
-	public ViewItemPage clickViewItem() {
-		driver.findElement(VIEW_ITEM_BUTTON).click();
+
+	public ViewItemPage clickViewItemOfSeondProduct() {
+		driver.findElement(VIEW_ITEM_OF_SECOND_PRODUCT_PAGE).click();
 		return new ViewItemPage(driver);
 	}
 
 	public ProductPage clickAddtoCart() {
 		driver.findElement(ADD_TO_CART_BUTTON).click();
 		return new ProductPage(driver);
+	}
+	
+	public CartModalPopUpPage waitForModalPopUpPage() {
+		driver.switchTo().activeElement();
+		return new CartModalPopUpPage(driver);
 	}
 
 	public WebElement getSearchButton() {

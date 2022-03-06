@@ -42,4 +42,10 @@ public class AutomationExcerciseHomePage extends AutomationExcerciseHomePageLoca
 	 	return new ProductPage(driver);
 	}
 
+	public ViewCartPage clickCart() {
+		// TODO Auto-generated method stub
+		driver.findElement(CART_LINK).click();
+		return new ViewCartPage(driver);
+	}
+
 }

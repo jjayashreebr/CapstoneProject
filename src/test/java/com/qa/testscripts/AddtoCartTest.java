@@ -11,6 +11,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.qa.pages.AutomationExcerciseHomePage;
+import com.qa.pages.LoginPage;
 import com.qa.pages.ProductPage;
 import com.qa.pages.ViewCartPage;
 import com.qa.pages.ViewItemPage;
@@ -19,126 +20,96 @@ import com.qa.utils.BaseDriver;
 public class AddtoCartTest extends BaseDriver {
 	WebDriver driver;
 
-	@Test
+	@Test(groups= {"cart"})
 	public void verifyAddtoCartFromProductsPage() throws IOException {
 		driver = BaseDriver.getWebDriver();
-		ProductPage page = new AutomationExcerciseHomePage(driver).open().clickProductLink();
-		String expectedProduct = page.getProductName();
+		ProductPage productPage = new AutomationExcerciseHomePage(driver).open().clickProductLink();
+		String expectedProduct = productPage.getProductName();
 
 		System.out.println(expectedProduct);
-		page.clickAddtoCart();
-		System.out.println(driver.getTitle());
+		ViewCartPage viewCartPage=productPage
+				.clickAddtoCart()
+				.waitForModalPopUpPage()
+				.clickViewCart();
+		Assert.assertTrue(viewCartPage.verifyContainsProduct(expectedProduct));
+      }
 
-		driver.switchTo().activeElement();
-		ViewCartPage vpage = page.clickViewCart();
-		System.out.println(driver.getTitle());
-
-		String actualProduct = vpage.getProductName();
-
-		System.out.println(actualProduct);
-
-		Assert.assertEquals(actualProduct, expectedProduct);
-
-	}
-
-	@Test
+	@Test(groups= {"cart"})
 	public void verifyAddtoCartFromViewItem() throws IOException {
 		driver = BaseDriver.getWebDriver();
-		ProductPage page = new AutomationExcerciseHomePage(driver).open().clickProductLink();
+		ProductPage productPage = new AutomationExcerciseHomePage(driver).open().clickProductLink();
 
-		ViewItemPage vipage = page.clickViewItem();
-		String expectedProduct = vipage.getProductName();
+		ViewItemPage viewItemPage = productPage.clickViewItemOfSeondProduct();
+		String expectedProduct = viewItemPage.getProductName();
 		System.out.println(expectedProduct);
 
-		vipage.clickAddtoCart();
-		System.out.println(driver.getTitle());
-		driver.switchTo().activeElement();
+		ViewCartPage viewCartPage=viewItemPage
+				.clickAddtoCart()
+				.waitForModalPopUpPage()
+				.clickViewCart();
 
-		ViewCartPage vpage = vipage.clickViewCart();
-		System.out.println(driver.getTitle());
-
-		String actualProduct = vpage.getProductName();
-
-		System.out.println(actualProduct);
-
-		Assert.assertEquals(actualProduct, expectedProduct);
+		String actualProduct = viewCartPage.getProductName();
+        Assert.assertEquals(actualProduct, expectedProduct);
 	}
 
-	@Test
+	@Test(groups= {"cart"})
 	public void verifyAddtoCartByAddingMultipleQuantities() throws IOException {
 		driver = BaseDriver.getWebDriver();
-		ProductPage page = new AutomationExcerciseHomePage(driver).open().clickProductLink();
-
-		ViewItemPage vipage = page.clickViewItem();
-		String expectedProduct = vipage.getProductName();
+		ProductPage productPage = new AutomationExcerciseHomePage(driver).open().clickProductLink();
+        ViewItemPage viewItemPage = productPage
+        		.clickViewItemOfSeondProduct();
+		String expectedProduct = viewItemPage.getProductName();
+		viewItemPage.setProductQuantity("2");
 		System.out.println(expectedProduct);
-		
-		vipage.getProductQuantity().clear();
-		vipage.getProductQuantity().sendKeys("2");
-		vipage.clickAddtoCart();
-		
-		System.out.println(driver.getTitle());
-		driver.switchTo().activeElement();
-		ViewCartPage vpage = vipage.clickViewCart();
-		System.out.println(driver.getTitle());
-		
-		String actualProduct = vpage.getProductName();
-		
-		String quantity =vpage.getProductQuantity();
-
-		System.out.println(quantity);
-		Assert.assertEquals(quantity,2);
+		String expectedQuantity ="2";
+		ViewCartPage viewCartPage=viewItemPage
+				.clickAddtoCart()
+				.waitForModalPopUpPage()
+				.clickViewCart();
+		String actualProduct = viewCartPage.getProductName();
+		String actualQuantity =viewCartPage.getProductQuantity();
+		Assert.assertEquals(actualQuantity,expectedQuantity);
 		Assert.assertEquals(actualProduct, expectedProduct);
 	}
 
-	@Test
+	@Test(groups= {"cart"})
 	public void verifyAddtoCartByAddingSameProductMultiplyTimes() throws IOException {
 		driver = BaseDriver.getWebDriver();
-		ProductPage page = new AutomationExcerciseHomePage(driver).open().clickProductLink();
+		ProductPage productPage = new AutomationExcerciseHomePage(driver).open().clickProductLink();
 
-		ViewItemPage vipage = page.clickViewItem();
-		String expectedProduct = vipage.getProductName();
+		ViewItemPage viewItemPage = productPage.clickViewItemOfSeondProduct();
+		String expectedProduct = viewItemPage.getProductName();
 		System.out.println(expectedProduct);
 
-		vipage.clickAddtoCart();
+		ViewCartPage viewCartPage=	viewItemPage
+		.clickAddtoCart()
+		.waitForModalPopUpPage()
+		.clickContinueShopping()
+		.waitForViewItemPage()
+		.clickAddtoCart()
+		.waitForModalPopUpPage()
+		.clickViewCart();
+
+        String actualProduct = viewCartPage.getProductName();
+		String quantity =viewCartPage.getProductQuantity();
 		
-		driver.switchTo().activeElement();
-		vipage.clickContinueShopping();
-
-		driver.switchTo().defaultContent();
-		vipage.clickAddtoCart();
-
-		driver.switchTo().activeElement();
-		vipage.clickContinueShopping();
-
-		driver.switchTo().defaultContent();
-		vipage.clickAddtoCart();
-
-		driver.switchTo().activeElement();
-		ViewCartPage vpage = vipage.clickViewCart();
-		System.out.println(driver.getTitle());
-		
-		String actualProduct = vpage.getProductName();
-		
-		String quantity =vpage.getProductQuantity();
-
-		Assert.assertEquals(quantity,3);
+		Assert.assertEquals(quantity,String.valueOf(2));
 		Assert.assertEquals(actualProduct, expectedProduct);
 	}
 
-	@Test
+	@Test(groups= {"cart"})
 	public void verifyAddtoCartByAddingZeroQuantities() throws IOException {
 		driver = BaseDriver.getWebDriver();
 		ProductPage page = new AutomationExcerciseHomePage(driver).open().clickProductLink();
 
-		ViewItemPage vipage = page.clickViewItem();
-		String expectedProduct = vipage.getProductName();
+		ViewItemPage viewItemPage = page.clickViewItemOfSeondProduct();
+		String expectedProduct = viewItemPage.getProductName();
 		System.out.println(expectedProduct);
 		
-		vipage.getProductQuantity().clear();
-		vipage.clickAddtoCart();
+		viewItemPage.getProductQuantity().clear();
+		viewItemPage.clickAddtoCart();
 		
-		boolean bst = isClickable(vipage.getAddtoCartEle(),driver);
+		boolean bst = isClickable(viewItemPage.getAddtoCartEle(),driver);
 		System.out.println(bst); 
 		
 	}
@@ -154,6 +125,66 @@ public class AddtoCartTest extends BaseDriver {
 		{
 		return false;
 		 }
+	}
+	
+	@Test(groups= {"cart","regression"})
+	public void verifyAddtoCartAsASignedInCustomer() throws IOException {
+		driver = BaseDriver.getWebDriver();
+		String email = "xx@x";
+		String password = "xxxxx";
+		 LoginPage loginPage = new AutomationExcerciseHomePage(driver)
+				 .open()
+				 .clickSignInLink()
+				 .getLoginModule();
+		 AutomationExcerciseHomePage homepage=
+				 loginPage.setEmailLoginTextBox(email)
+		                  .setPasswordTextBox(password)
+		                  .clickLogin();
+		ProductPage productPage =homepage.open().clickProductLink();
+
+		ViewItemPage viewItemPage = productPage.clickViewItemOfSeondProduct();
+		String expectedProduct = viewItemPage.getProductName();
+		System.out.println(expectedProduct);
+
+		ViewCartPage viewCartPage =viewItemPage
+				.clickAddtoCart()
+				.waitForModalPopUpPage()
+				.clickViewCart();
+				
+	Assert.assertTrue(viewCartPage.verifyContainsProduct(expectedProduct));
+		
+	}
+	
+	
+	@Test(groups= {"cart","regression"})
+	public void verifyAddToCartAsGuestCustomer() throws IOException {
+		driver = BaseDriver.getWebDriver();
+		String email = "xx@x";
+		String password = "xxxxx";
+	
+		ProductPage productPage =new AutomationExcerciseHomePage(driver).open().clickProductLink();
+
+		ViewItemPage viewItemPage = productPage.clickViewItemOfSeondProduct();
+		String expectedProduct = viewItemPage.getProductName();
+		System.out.println(expectedProduct);
+
+		viewItemPage
+				.clickAddtoCart()
+				.waitForModalPopUpPage()
+				.clickViewCart();
+		
+		LoginPage loginPage = new AutomationExcerciseHomePage(driver)
+				 .open()
+				 .clickSignInLink()
+				 .getLoginModule();
+		 
+		 AutomationExcerciseHomePage homepage=
+				 loginPage.setEmailLoginTextBox(email)
+		                  .setPasswordTextBox(password)
+		                  .clickLogin();
+		 
+		 ViewCartPage viewCartPage=homepage.clickCart();
+		 Assert.assertTrue(viewCartPage.verifyContainsProduct(expectedProduct));
 	}
 
 }

@@ -54,18 +54,14 @@ public class RegistrationTest extends BaseDriver {
 				.clickSignInLink()
 				.getSignUpModule();
 
-		JavascriptExecutor js = (JavascriptExecutor) driver;
+		
 		SoftAssert softAssert = new SoftAssert();
 
-		WebElement name = signUpPage.getNameTextBox();
-		String actualUserNameValidationMessage = (String) js.executeScript("return arguments[0].validationMessage;",
-				name);
+		String actualUserNameValidationMessage = signUpPage.getNameTextBoxValidationMsg();
 		String expectedName = getContent("signuppage", "validation_msg");
 		softAssert.assertEquals(actualUserNameValidationMessage, expectedName);
-
-		WebElement email = signUpPage.getEmailTextBox();
-		String actualEmailValidationMessage = (String) js.executeScript("return arguments[0].validationMessage;",
-				email);
+		
+		String actualEmailValidationMessage = signUpPage.getEmailTextBoxValidationMsg();
 		String expectedEmail = getContent("signuppage", "validation_msg");
 		softAssert.assertEquals(actualEmailValidationMessage, expectedEmail);
 
@@ -87,18 +83,12 @@ public class RegistrationTest extends BaseDriver {
 				.open()
 				.clickSignInLink()
 				.getSignUpModule();
-		
-		JavascriptExecutor js = (JavascriptExecutor) driver;
 
-		signUpPage.setNameTextBox("James");
+		signUpPage.setNameTextBox("James")
+		.setEmailTextBox("JamesBond")
+        .clickCreateAccount();
 
-		WebElement email = signUpPage.getEmailTextBox();
-		signUpPage.setEmailTextBox("JamesBond");
-
-		signUpPage.clickCreateAccount();
-
-		String actualEmailValidationMessage = (String) js.executeScript("return arguments[0].validationMessage;",
-				email);
+		String actualEmailValidationMessage =signUpPage.getEmailTextBoxValidationMsg();
 		String expectedEmail = getContent("loginpage", "email_validation_msg");
 
 		Assert.assertTrue(actualEmailValidationMessage.contains(expectedEmail));
@@ -128,30 +118,28 @@ public class RegistrationTest extends BaseDriver {
 				.clickSignInLink()
 				.getSignUpModule();
 		
-		String name = getValue(registrationData, "name");
-		String email = getValue(registrationData,"email");
-		String firstName =getValue(registrationData,"firstname");
-		String password =getValue(registrationData,"password");
+		String name = getInputValue(registrationData, "name");
+		String email = getInputValue(registrationData,"email");
+		String firstName =getInputValue(registrationData,"firstname");
+		String password =getInputValue(registrationData,"password");
 
 		RegistrationPage rpage =  signUpPage
-		                           .setNameTextBox(name)
-		                           .setEmailTextBox(email)
-		                           .clickCreateAccount();
-		
-
+		  .setNameTextBox(name)
+		  .setEmailTextBox(email)
+		  .clickCreateAccount();
 	
 		rpage
-		.setPasswordTextBox(password)
-        .setFirstTNameTextBox(firstName)
-        .setLastNameTextBox(getValue(registrationData,"lastname"));
+		  .setPasswordTextBox(password)
+          .setFirstTNameTextBox(firstName)
+          .setLastNameTextBox(getInputValue(registrationData,"lastname"));
 
 		rpage
-		.setAddressTextBox(getValue(registrationData,"address"))
-		.setCityTextBox(getValue(registrationData,"city"))
-		.setStateTextBox(getValue(registrationData,"state"))
-	    .setCountrySelectBox(getValue(registrationData,"country"))
-        .setZipcodeTextBox(getValue(registrationData,"zipcode"))
-		.setMobileTextBox(getValue(registrationData,"mobile"));
+		  .setAddressTextBox(getInputValue(registrationData,"address"))
+		  .setCityTextBox(getInputValue(registrationData,"city"))
+		  .setStateTextBox(getInputValue(registrationData,"state"))
+	      .setCountrySelectBox(getInputValue(registrationData,"country"))
+          .setZipcodeTextBox(getInputValue(registrationData,"zipcode"))
+		  .setMobileTextBox(getInputValue(registrationData,"mobile"));
 
 		SuccessAccountCreatedPage success = rpage.clickCreateAccount();
 		AutomationExcerciseHomePage homepage=success.clickContinueButton();
@@ -258,7 +246,7 @@ public class RegistrationTest extends BaseDriver {
 
 	}
 	
-	public static String getValue(HashMap<String, Object> map, String key) {
+	public static String getInputValue(HashMap<String, Object> map, String key) {
 		return map.get(key).toString();
 	}
 

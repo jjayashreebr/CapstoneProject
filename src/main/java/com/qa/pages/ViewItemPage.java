@@ -12,11 +12,16 @@ public class ViewItemPage extends ViewItemPageLocators {
 		this.driver=driver;
 	}
 	
-	public ViewCartPage clickAddtoCart() {
+	public ViewItemPage clickAddtoCart() {
 		 driver.findElement(ADD_TO_CART_VIEW_ITEM).click();
-		 return new ViewCartPage(driver);
+		 return new ViewItemPage(driver);
 	}
 	
+	
+	public CartModalPopUpPage waitForModalPopUpPage() {
+		driver.switchTo().activeElement();
+		return new CartModalPopUpPage(driver);
+	}
 	public WebElement getAddtoCartEle() {
 		return driver.findElement(ADD_TO_CART_VIEW_ITEM);
 	}
@@ -29,14 +34,13 @@ public class ViewItemPage extends ViewItemPageLocators {
 		return driver.findElement(QUANTITY_VIEW_ITEM);
 	}
 
-	public ViewCartPage clickViewCart() {
-		 driver.findElement(VIEW_CART_BUTTON_IN_MODEL).click();
-		 return new ViewCartPage(driver);
+
+
+	public ViewItemPage setProductQuantity(String string) {
+		driver.findElement(QUANTITY_VIEW_ITEM).clear();
+		driver.findElement(QUANTITY_VIEW_ITEM).sendKeys(string);
+		 return new ViewItemPage(driver);
 	}
 
 	
-	public ViewItemPage clickContinueShopping() {
-		 driver.findElement(CONTINUE_BUTTON_IN_MODEL).click();
-		 return new ViewItemPage(driver);
-	}
 }

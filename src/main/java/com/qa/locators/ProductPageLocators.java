@@ -4,9 +4,7 @@ import org.openqa.selenium.By;
 
 public class ProductPageLocators {
 	public static final By ADD_TO_CART_BUTTON =By.xpath("//*[@data-product-id='1']");
-	public static final By VIEW_ITEM_BUTTON=By.xpath("//*[@href='/product_details/2']");
-	
-	public static final By VIEW_CART_BUTTON_IN_MODEL =By.xpath("//div [@id='cartModal'] //a[@href='/view_cart']");
+	public static final By VIEW_ITEM_OF_SECOND_PRODUCT_PAGE=By.xpath("//*[@href='/product_details/2']");
 
 	public static final By SEARCH_TEXT_BOX = By.cssSelector("input#search_product");
 

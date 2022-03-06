@@ -10,4 +10,8 @@ public class ViewCartPageLocators {
 	public static final By PRODUCT_DETAIL = By.cssSelector(".product-information h2");
 	public static final By PRODUCT_QUANTITY_IN_VIEW_CART = By
 			.cssSelector("table#cart_info_table tbody tr td:nth-child(4) button");
+	
+	
+	
+	public static final By PROCEED_TO_CHECKOUT = By.cssSelector(".btn.btn-default.check_out");
 }

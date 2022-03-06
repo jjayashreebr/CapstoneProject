@@ -35,11 +35,11 @@ public class CategoryProductTest extends BaseDriver {
 		ProductPage page = new AutomationExcerciseHomePage(driver).open().clickProductLink();
 		List<WebElement> myList = page.getCategoryList();
 		myList.stream().map(s -> s.getText()).forEach(System.out::println);
-		Assert.assertTrue(myList.size() == 30);
+		Assert.assertTrue(myList.size() == 3);
 	}
 
 	/*
-	 * 2. Verify that category “women” is clicked ,it expands and shows all sub
+	 * 2. Verify that category ï¿½womenï¿½ is clicked ,it expands and shows all sub
 	 * categories Given : when user click on product link in homepage When : user
 	 * clicks in a <category> Then: it shows all the subcategories
 	 */
@@ -59,7 +59,7 @@ public class CategoryProductTest extends BaseDriver {
     }
 
 	/*
-	 * 3. Verify that sub category in “women” is clicked ,it should corresponding
+	 * 3. Verify that sub category in ï¿½womenï¿½ is clicked ,it should corresponding
 	 * search page title. Given : when user click on product link in homepage When :
 	 * user clicks in a "subcategory" Then: it shows corresponding subcategory page
 	 */

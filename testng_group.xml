@@ -14,9 +14,11 @@
 			<class name="com.qa.testscripts.LoginTest" />
 		</classes>
 	</test>
-	<test thread-count="5" name="AddToCartTest">
+
+  <test thread-count="5" name="CartTest">
 		<classes>
 			<class name="com.qa.testscripts.AddtoCartTest" />
+			<class name="com.qa.testscripts.CheckoutTest" />
 		</classes>
 	</test>
 	<test thread-count="5" name="RegistrationTest">
