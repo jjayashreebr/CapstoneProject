@@ -1,7 +1,7 @@
 package com.qa.pages;
 
 import org.openqa.selenium.WebDriver;
-import com.qa.locators.CartModalPopupPageLocators;
+
 import com.qa.locators.CheckoutModalLocators;
 ;
 

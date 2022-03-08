@@ -1,28 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
-  <listeners>
-    <listener class-name="com.qa.testscripts.Listeners"/>
-  </listeners>
-  <test thread-count="5" name="SearchTest(failed)">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]" parallel="tests">
+  <test thread-count="5" name="SearchTest(failed)" parallel="tests">
     <classes>
-      <class name="com.qa.testscripts.CategoryProductTest">
+      <class name="com.qa.testscripts.BrandProductTest">
         <methods>
-          <include name="verifyAllCategoryIsShown"/>
+          <include name="verifyAllBrandsAreListed"/>
           <include name="tearDown"/>
         </methods>
-      </class> <!-- com.qa.testscripts.CategoryProductTest -->
+      </class> <!-- com.qa.testscripts.BrandProductTest -->
     </classes>
   </test> <!-- SearchTest(failed) -->
-  <test thread-count="5" name="CartTest(failed)">
-    <classes>
-      <class name="com.qa.testscripts.AddtoCartTest">
-        <methods>
-          <include name="verifyAddToCartAsGuestCustomer"/>
-          <include name="verifyAddtoCartAsASignedInCustomer"/>
-          <include name="tearDown"/>
-        </methods>
-      </class> <!-- com.qa.testscripts.AddtoCartTest -->
-    </classes>
-  </test> <!-- CartTest(failed) -->
 </suite> <!-- Failed suite [Suite] -->

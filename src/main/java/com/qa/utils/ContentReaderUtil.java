@@ -8,7 +8,7 @@ public class ContentReaderUtil {
 	public static String getPropertyFile(String propertyFileName, String propertyName) throws IOException {
         String path = System.getProperty("user.dir");
     	Properties prop = new Properties();
-        path = path + "/src/test/java/com/qa/resources/"+propertyFileName+".properties";
+        path = path + "/src/test/java/com/qa/resources/testData/"+propertyFileName+".properties";
 		//System.out.println(path);
 		FileInputStream file;
 

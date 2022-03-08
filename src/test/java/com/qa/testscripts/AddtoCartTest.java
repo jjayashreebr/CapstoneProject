@@ -15,7 +15,7 @@ import com.qa.pages.LoginPage;
 import com.qa.pages.ProductPage;
 import com.qa.pages.ViewCartPage;
 import com.qa.pages.ViewItemPage;
-import com.qa.utils.BaseDriver;
+import com.qa.resources.BaseDriver;
 
 public class AddtoCartTest extends BaseDriver {
 	WebDriver driver;

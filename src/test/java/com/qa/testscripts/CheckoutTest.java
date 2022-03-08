@@ -14,7 +14,7 @@ import com.qa.pages.PaymentPage;
 import com.qa.pages.ProductPage;
 import com.qa.pages.ViewCartPage;
 import com.qa.pages.ViewItemPage;
-import com.qa.utils.BaseDriver;
+import com.qa.resources.BaseDriver;
 
 public class CheckoutTest extends BaseDriver {
 	WebDriver driver;

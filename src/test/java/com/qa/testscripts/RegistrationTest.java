@@ -7,10 +7,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
-import org.openqa.selenium.JavascriptExecutor;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -20,23 +19,28 @@ import com.qa.pages.AutomationExcerciseHomePage;
 import com.qa.pages.RegistrationPage;
 import com.qa.pages.SignUpPage;
 import com.qa.pages.SuccessAccountCreatedPage;
-import com.qa.utils.BaseDriver;
+import com.qa.resources.BaseDriver;
 import com.qa.utils.BodyConstruction;
 
 public class RegistrationTest extends BaseDriver {
+	
+	private static  Logger LOGGER = LogManager.getLogger(RegistrationTest.class);
 
 	/* Verify sign up link on home page takes to SignUp/Login Page */
 	@Test
-	public void verifyPageTitle() throws IOException {
+	public void verifyPageTitle(){
 		WebDriver driver = BaseDriver.getWebDriver();
 		SignUpPage signUpPage = new AutomationExcerciseHomePage(driver)
 			.open()
 			.clickSignInLink()
 			.getSignUpModule();
-			
 
+		LOGGER.info(" Verify sign up link on home page takes to SignUp/Login Page");
 		Assert.assertEquals(signUpPage.getTitle(), getContent("signuppage", "pagetitle"));
 	}
+
+
+
 
 	/*
 	 * Given: when sign up link is clicked in home page
@@ -46,7 +50,7 @@ public class RegistrationTest extends BaseDriver {
 	 * then: field validation error must be displayed
 	 */
 	@Test(groups = { "frontend" })
-	public void verifySignUpWithEmptyCredentials() throws IOException {
+	public void verifySignUpWithEmptyCredentials(){
 		WebDriver driver = BaseDriver.getWebDriver();
 
 		SignUpPage signUpPage = new AutomationExcerciseHomePage(driver)
@@ -54,14 +58,20 @@ public class RegistrationTest extends BaseDriver {
 				.clickSignInLink()
 				.getSignUpModule();
 
-		
+
 		SoftAssert softAssert = new SoftAssert();
 
 		String actualUserNameValidationMessage = signUpPage.getNameTextBoxValidationMsg();
 		String expectedName = getContent("signuppage", "validation_msg");
+		if(actualUserNameValidationMessage==null) {
+			LOGGER.error("Err. No user field validation");
+		}
 		softAssert.assertEquals(actualUserNameValidationMessage, expectedName);
-		
+
 		String actualEmailValidationMessage = signUpPage.getEmailTextBoxValidationMsg();
+		if(actualEmailValidationMessage==null) {
+			LOGGER.error("Err. No user field validation");
+		}
 		String expectedEmail = getContent("signuppage", "validation_msg");
 		softAssert.assertEquals(actualEmailValidationMessage, expectedEmail);
 
@@ -76,7 +86,7 @@ public class RegistrationTest extends BaseDriver {
 	 * then: field validation error must be displayed
 	 */
 	@Test(groups = { "frontend" })
-	public void verifyRegistartionWithInvalidEmail() throws IOException {
+	public void verifyRegistartionWithInvalidEmail()  {
 		WebDriver driver = BaseDriver.getWebDriver();
 
 		SignUpPage signUpPage = new AutomationExcerciseHomePage(driver)
@@ -109,7 +119,7 @@ public class RegistrationTest extends BaseDriver {
 	 */
 
 	@Test(dataProvider = "registrationData",groups = { "frontend", "regression" })
-	public void verifyRegistartionWithValidCredentials(HashMap<String, Object> registrationData) throws IOException, InterruptedException {
+	public void verifyRegistartionWithValidCredentials(HashMap<String, Object> registrationData){
 
 		WebDriver driver = BaseDriver.getWebDriver();
 
@@ -117,7 +127,7 @@ public class RegistrationTest extends BaseDriver {
 				.open()
 				.clickSignInLink()
 				.getSignUpModule();
-		
+
 		String name = getInputValue(registrationData, "name");
 		String email = getInputValue(registrationData,"email");
 		String firstName =getInputValue(registrationData,"firstname");
@@ -127,7 +137,7 @@ public class RegistrationTest extends BaseDriver {
 		  .setNameTextBox(name)
 		  .setEmailTextBox(email)
 		  .clickCreateAccount();
-	
+
 		rpage
 		  .setPasswordTextBox(password)
           .setFirstTNameTextBox(firstName)
@@ -142,6 +152,7 @@ public class RegistrationTest extends BaseDriver {
 		  .setMobileTextBox(getInputValue(registrationData,"mobile"));
 
 		SuccessAccountCreatedPage success = rpage.clickCreateAccount();
+		LOGGER.info("Log*****"+success.getSuccessMsgBox());
 		AutomationExcerciseHomePage homepage=success.clickContinueButton();
 		Assert.assertEquals(homepage.getcustomerName(),name);
 		homepage.clickLogoutLink();
@@ -155,7 +166,9 @@ public class RegistrationTest extends BaseDriver {
 				.when()
 		.delete("https://automationexercise.com/api/deleteAccount").then().assertThat().statusCode(200)
 		.extract().response().asString();
-        System.out.println(response);
+        //System.out.println(response);
+        LOGGER.info("User account successfully created");
+        LOGGER.info(response);
 
 	}
 
@@ -167,7 +180,8 @@ public class RegistrationTest extends BaseDriver {
 		try {
 			customerInfo = com.qa.utils.ExcelHelper.getExcelData();
 		} catch (IOException e) {
-			e.printStackTrace();
+			//e.printStackTrace();
+			 LOGGER.error(e);
 		}
 		Set<Integer> keyid = customerInfo.keySet();
 		Object[][] obj = new Object[keyid.size()][1];
@@ -197,7 +211,7 @@ public class RegistrationTest extends BaseDriver {
 	 * then : appropriate validation message must be displayed.
 	 */
 	@Test(dataProvider = "registrationData")
-	public void verifyRegistrationWithExistingUser(HashMap<String, Object> map) throws IOException {
+	public void verifyRegistrationWithExistingUser(HashMap<String, Object> map)  {
 		String bodyText =BodyConstruction.bodyForCreateUser(map);
 		Map<String, String> header = new HashMap<>();
 		header.put("Accept", "application/json");
@@ -211,12 +225,12 @@ public class RegistrationTest extends BaseDriver {
 				.when()
 				.post("https://automationexercise.com/api/createAccount").then().assertThat().statusCode(200)
 				.extract().response().asString();
-		System.out.println(response);
+		 LOGGER.info(response);
 
 		 response = given().relaxedHTTPSValidation().queryParam("email", email).when()
 				.get("https://automationexercise.com/api/getUserDetailByEmail").then().assertThat().statusCode(200)
 				.extract().response().asString();
-		System.out.println(response);
+		 LOGGER.info(response);
 
 		WebDriver driver = BaseDriver.getWebDriver();
 
@@ -230,9 +244,9 @@ public class RegistrationTest extends BaseDriver {
          .setNameTextBox(name)
          .setEmailTextBox(email)
          .clickCreateAccount();
-		 
+
 		Assert.assertEquals(signUpPage.getValidationMsg(),getContent("signuppage", "existing_email_validation_msg"));
-		
+		LOGGER.info(signUpPage.getValidationMsg());
 		//delete account - clean up
 		 bodyText= "email="+email+"&password="+password;
 		 response=given().relaxedHTTPSValidation()
@@ -242,10 +256,10 @@ public class RegistrationTest extends BaseDriver {
 				.when()
 		.delete("https://automationexercise.com/api/deleteAccount").then().assertThat().statusCode(200)
 		.extract().response().asString();
-        System.out.println(response);
+		 LOGGER.info(response);
 
 	}
-	
+
 	public static String getInputValue(HashMap<String, Object> map, String key) {
 		return map.get(key).toString();
 	}

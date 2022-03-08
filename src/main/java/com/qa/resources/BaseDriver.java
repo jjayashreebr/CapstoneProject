@@ -1,4 +1,4 @@
-package com.qa.utils;
+package com.qa.resources;
 
 import java.io.File;
 import java.io.IOException;
@@ -14,9 +14,11 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.testng.annotations.AfterMethod;
 
+import com.qa.utils.ContentReaderUtil;
+
 public class BaseDriver {
 
-	public static final ThreadLocal<WebDriver> webdrivers = new ThreadLocal<>();
+	public static final ThreadLocal<WebDriver> webdrivers = new ThreadLocal<WebDriver>();
 
 	static {
 		String driverpath = System.getProperty("user.dir");
@@ -24,14 +26,10 @@ public class BaseDriver {
 		System.setProperty("webdriver.edge.driver", driverpath + "/webdriver/msedgedriver.exe");
 	}
 
-	public static WebDriver getWebDriver() throws IOException {
+	public static WebDriver getWebDriver() {
 
 		WebDriver driver = null;
-
-		// Global configs from pom.xml - browser
 		String browser = System.getProperty("testbrowser");
-		System.out.println("Pom value-----------------" + browser);
-
 		switch (browser) {
 		case "edge":
 			EdgeOptions options = new EdgeOptions();
@@ -55,18 +53,25 @@ public class BaseDriver {
 		return webdrivers.get();
 	}
 
-	public static String getContent(String propertyFileName, String propertyName) throws IOException {
-
-      return ContentReaderUtil.getPropertyFile(propertyFileName, propertyName);
+	public static String getContent(String propertyFileName, String propertyName){
+     String propertyValue=null;
+      try {
+    	  propertyValue= ContentReaderUtil.getPropertyFile(propertyFileName, propertyName);
+	} catch (IOException e) {
+		e.printStackTrace();
+	}
+      return propertyValue;
 	}
 
 	@AfterMethod
 	public void tearDown() {
 		// To ensure driver is available before closing
 		if (webdrivers.get() != null) {
+		    webdrivers.get().close();
 		    webdrivers.get().quit();
 		}
 	}
+
 	
 	public void getScreenShotPath(String testName,WebDriver driver) throws IOException {
 		TakesScreenshot t= (TakesScreenshot) driver;

@@ -7,7 +7,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.qa.pages.AutomationExcerciseHomePage;
-import com.qa.utils.BaseDriver;
+import com.qa.resources.BaseDriver;
 
 public class AutomationExcerciseHomePageTests extends BaseDriver {
 

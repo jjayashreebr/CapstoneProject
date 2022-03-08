@@ -18,7 +18,7 @@ import org.testng.annotations.Test;
 import com.qa.pages.AutomationExcerciseHomePage;
 import com.qa.pages.CategoryProductPage;
 import com.qa.pages.ProductPage;
-import com.qa.utils.BaseDriver;
+import com.qa.resources.BaseDriver;
 
 
 public class CategoryProductTest extends BaseDriver {

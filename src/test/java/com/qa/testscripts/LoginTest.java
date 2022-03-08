@@ -17,7 +17,7 @@ import org.testng.asserts.SoftAssert;
 
 import com.qa.pages.AutomationExcerciseHomePage;
 import com.qa.pages.LoginPage;
-import com.qa.utils.BaseDriver;
+import com.qa.resources.BaseDriver;
 import com.qa.utils.BodyConstruction;
 
 import io.restassured.path.json.JsonPath;
@@ -33,7 +33,7 @@ public class LoginTest extends BaseDriver {
 	 * then: field validation error must be displayed
 	 */
 	@Test(groups = { "frontend" ,"login"})
-	public void verifyLoginWithEmptyCredentials() throws IOException {
+	public void verifyLoginWithEmptyCredentials() {
 		 driver = BaseDriver.getWebDriver();
 
 		LoginPage loginPage = new AutomationExcerciseHomePage(driver)
@@ -67,7 +67,7 @@ public class LoginTest extends BaseDriver {
 	 * then: field validation error must be displayed
 	 */
 	@Test(groups = { "frontend","login" })
-	public void verifyRegistartionWithInvalidEmail() throws IOException {
+	public void verifyRegistartionWithInvalidEmail() {
 		 driver = BaseDriver.getWebDriver();
 
 		 LoginPage loginPage = new AutomationExcerciseHomePage(driver)
@@ -109,15 +109,15 @@ public class LoginTest extends BaseDriver {
 	}
 
 	/*
-	 * Verify Login with valid details – API validation PreCondition – create user
+	 * Verify Login with valid details ï¿½ API validation PreCondition ï¿½ create user
 	 * account using API Given : when request to
 	 * https://automationexercise.com/api/verifyLogin is sent with request
 	 * parameters valid email and valid password when : post request is made then :
 	 * response must be 200.
 	 */
 
-	@Test(dataProvider = "registrationData",groups= {"login","regression"})
-	public void verifyLoginWithValidCredential(HashMap<String, Object> map) throws IOException {
+	@Test(dataProvider = "registrationData",groups= {"login","regression","backend"})
+	public void verifyLoginWithValidCredential(HashMap<String, Object> map) {
 		String bodyText = BodyConstruction.bodyForCreateUser(map);
 		Map<String, String> header = new HashMap<>();
 		header.put("Accept", "application/json");
@@ -149,14 +149,14 @@ public class LoginTest extends BaseDriver {
 	}
 
 	/*
-	 * Verify Login without email details – API validation Given : when request to
+	 * Verify Login without email details ï¿½ API validation Given : when request to
 	 * https://automationexercise.com/api/verifyLogin is sent with no request
 	 * parameters when : post request is made then : response must be 400.
 	 * 
 	 */
 
-	@Test(groups= {"login"})
-	public void verifyLoginWithEmptyEmailCredential() throws IOException {
+	@Test(groups= {"login","backend"})
+	public void verifyLoginWithEmptyEmailCredential(){
 
 		Map<String, String> header = new HashMap<>();
 		header.put("Accept", "application/json");
@@ -178,12 +178,12 @@ public class LoginTest extends BaseDriver {
 	}
 
 	/*
-	 * 5.Delete account using Verify Login – API validation Given : when request to
+	 * 5.Delete account using Verify Login ï¿½ API validation Given : when request to
 	 * https://automationexercise.com/api/verifyLogin is sent when : delete request
 	 * is made then : response must be 405
 	 */
 	@Test(groups= {"login"})
-	public void verifyDeleteLogin() throws IOException {
+	public void verifyDeleteLogin(){
 		Map<String, String> header = new HashMap<>();
 		header.put("Accept", "application/json");
 		header.put("Content-Type", "application/x-www-form-urlencoded");
@@ -198,14 +198,14 @@ public class LoginTest extends BaseDriver {
 	}
 
 	/*
-	 * Verify Login invalid email and invalid password details – API validation
+	 * Verify Login invalid email and invalid password details ï¿½ API validation
 	 * Given : when request to https://automationexercise.com/api/verifyLogin is
 	 * sent with invalid request parameters when : post request is made then :
 	 * response must be 404.
 	 */
 
-	@Test(groups= {"login"})
-	public void verifyLoginWithInvalidCredentials() throws IOException {
+	@Test(groups= {"login","backend"})
+	public void verifyLoginWithInvalidCredentials() {
 		Map<String, String> header = new HashMap<>();
 		header.put("Accept", "application/json");
 		header.put("Content-Type", "application/x-www-form-urlencoded");
@@ -221,9 +221,9 @@ public class LoginTest extends BaseDriver {
 	}
 
 	/*
-	 * 7.Verify login with valid user and valid password – Front End Given – when
+	 * 7.Verify login with valid user and valid password ï¿½ Front End Given ï¿½ when
 	 * user click on signup/login on hompage 
-	 * When – valid email and password is given 
+	 * When ï¿½ valid email and password is given 
 	 * Then- it should show user name in logged in as .
 	 */
 	@Test(dataProvider = "registrationData",groups= {"login","regression"})

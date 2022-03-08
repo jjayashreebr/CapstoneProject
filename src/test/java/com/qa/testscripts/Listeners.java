@@ -8,7 +8,7 @@ import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
-import com.qa.utils.BaseDriver;
+import com.qa.resources.BaseDriver;
 
 public class Listeners extends BaseDriver implements ITestListener{
 

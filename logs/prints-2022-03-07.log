@@ -1,0 +1,4 @@
+16:39:24.095 [main] DEBUG org.apache.poi.openxml4j.opc.PackageRelationshipCollection - Parsing relationship: /xl/worksheets/_rels/sheet1.xml.rels
+16:39:24.124 [main] DEBUG org.apache.poi.openxml4j.opc.PackageRelationshipCollection - Parsing relationship: /_rels/.rels
+16:39:24.950 [main] INFO  com.qa.testscripts.RegistrationTest - {"responseCode": 201, "message": "User created!"}
+16:39:25.527 [main] INFO  com.qa.testscripts.RegistrationTest - {"responseCode": 200, "user": {"id": 3249, "name": "jj", "email": "jj@j.com", "title": "", "birth_day": "", "birth_month": "", "birth_year": "", "first_name": "j", "last_name": "j", "company": "", "address1": "abc street", "address2": "", "country": "usa", "state": "ca", "city": "santa clara", "zipcode": "95051"}}

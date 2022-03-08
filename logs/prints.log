@@ -1,0 +1,4 @@
+16:39:31.079 [main] INFO  com.qa.testscripts.RegistrationTest - Email Address already exist!
+16:39:31.473 [main] INFO  com.qa.testscripts.RegistrationTest - {"responseCode": 200, "message": "Account deleted!"}
+16:39:31.477 [AsyncHttpClient-1-13] TRACE io.netty.handler.codec.http.websocketx.WebSocket08FrameEncoder - Encoding WebSocket Frame opCode=8 length=26
+16:39:37.173 [AsyncHttpClient-1-16] TRACE io.netty.handler.codec.http.websocketx.WebSocket08FrameEncoder - Encoding WebSocket Frame opCode=8 length=26

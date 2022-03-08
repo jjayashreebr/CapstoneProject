@@ -1,75 +1,340 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="5" passed="5">
+<testng-results skipped="0" failed="0" ignored="0" total="16" passed="16">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="52794" started-at="2022-03-05T16:34:12 PST" finished-at="2022-03-05T16:35:04 PST">
+  <suite name="Suite" duration-ms="123432" started-at="2022-03-08T14:37:12 PST" finished-at="2022-03-08T14:39:16 PST">
     <groups>
+      <group name="regresssion">
+        <method signature="BrandProductTest.verifyBrandListing(java.lang.String,java.lang.String)[pri:0, instance:com.qa.testscripts.BrandProductTest@5427c60c]" name="verifyBrandListing" class="com.qa.testscripts.BrandProductTest"/>
+      </group> <!-- regresssion -->
       <group name="regression">
-        <method signature="RegistrationTest.verifyRegistartionWithValidCredentials(java.util.HashMap)[pri:0, instance:com.qa.testscripts.RegistrationTest@1990a65e]" name="verifyRegistartionWithValidCredentials" class="com.qa.testscripts.RegistrationTest"/>
+        <method signature="BrandProductTest.verifyAllBrandsAreListed()[pri:0, instance:com.qa.testscripts.BrandProductTest@5427c60c]" name="verifyAllBrandsAreListed" class="com.qa.testscripts.BrandProductTest"/>
+        <method signature="BrandProductTest.verifyProductCountUnderEachBrands(java.lang.String)[pri:0, instance:com.qa.testscripts.BrandProductTest@5427c60c]" name="verifyProductCountUnderEachBrands" class="com.qa.testscripts.BrandProductTest"/>
+        <method signature="CategoryProductTest.verifyAllCategoryIsShown()[pri:0, instance:com.qa.testscripts.CategoryProductTest@5204062d]" name="verifyAllCategoryIsShown" class="com.qa.testscripts.CategoryProductTest"/>
+        <method signature="CategoryProductTest.verifyAllSubCategoryIsShown(java.lang.String,[Ljava.lang.String;)[pri:0, instance:com.qa.testscripts.CategoryProductTest@5204062d]" name="verifyAllSubCategoryIsShown" class="com.qa.testscripts.CategoryProductTest"/>
+        <method signature="CategoryProductTest.verifySubCategorySearch(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.testscripts.CategoryProductTest@5204062d]" name="verifySubCategorySearch" class="com.qa.testscripts.CategoryProductTest"/>
       </group> <!-- regression -->
+      <group name="cucumber">
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.qa.testrunner.TestRunner@543e710e]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+      </group> <!-- cucumber -->
+      <group name="integration">
+        <method signature="BrandProductTest.verifyAllBrandsAreListed()[pri:0, instance:com.qa.testscripts.BrandProductTest@5427c60c]" name="verifyAllBrandsAreListed" class="com.qa.testscripts.BrandProductTest"/>
+        <method signature="BrandProductTest.verifyProductCountUnderEachBrands(java.lang.String)[pri:0, instance:com.qa.testscripts.BrandProductTest@5427c60c]" name="verifyProductCountUnderEachBrands" class="com.qa.testscripts.BrandProductTest"/>
+      </group> <!-- integration -->
+      <group name="category">
+        <method signature="CategoryProductTest.verifyAllCategoryIsShown()[pri:0, instance:com.qa.testscripts.CategoryProductTest@5204062d]" name="verifyAllCategoryIsShown" class="com.qa.testscripts.CategoryProductTest"/>
+        <method signature="CategoryProductTest.verifyAllSubCategoryIsShown(java.lang.String,[Ljava.lang.String;)[pri:0, instance:com.qa.testscripts.CategoryProductTest@5204062d]" name="verifyAllSubCategoryIsShown" class="com.qa.testscripts.CategoryProductTest"/>
+        <method signature="CategoryProductTest.verifySubCategorySearch(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.testscripts.CategoryProductTest@5204062d]" name="verifySubCategorySearch" class="com.qa.testscripts.CategoryProductTest"/>
+      </group> <!-- category -->
+      <group name="brand">
+        <method signature="BrandProductTest.verifyAllBrandsAreListed()[pri:0, instance:com.qa.testscripts.BrandProductTest@5427c60c]" name="verifyAllBrandsAreListed" class="com.qa.testscripts.BrandProductTest"/>
+        <method signature="BrandProductTest.verifyBrandListing(java.lang.String,java.lang.String)[pri:0, instance:com.qa.testscripts.BrandProductTest@5427c60c]" name="verifyBrandListing" class="com.qa.testscripts.BrandProductTest"/>
+        <method signature="BrandProductTest.verifyProductCountUnderEachBrands(java.lang.String)[pri:0, instance:com.qa.testscripts.BrandProductTest@5427c60c]" name="verifyProductCountUnderEachBrands" class="com.qa.testscripts.BrandProductTest"/>
+      </group> <!-- brand -->
       <group name="frontend">
-        <method signature="RegistrationTest.verifyRegistartionWithInvalidEmail()[pri:0, instance:com.qa.testscripts.RegistrationTest@1990a65e]" name="verifyRegistartionWithInvalidEmail" class="com.qa.testscripts.RegistrationTest"/>
-        <method signature="RegistrationTest.verifyRegistartionWithValidCredentials(java.util.HashMap)[pri:0, instance:com.qa.testscripts.RegistrationTest@1990a65e]" name="verifyRegistartionWithValidCredentials" class="com.qa.testscripts.RegistrationTest"/>
-        <method signature="RegistrationTest.verifySignUpWithEmptyCredentials()[pri:0, instance:com.qa.testscripts.RegistrationTest@1990a65e]" name="verifySignUpWithEmptyCredentials" class="com.qa.testscripts.RegistrationTest"/>
+        <method signature="BrandProductTest.verifyBrandListing(java.lang.String,java.lang.String)[pri:0, instance:com.qa.testscripts.BrandProductTest@5427c60c]" name="verifyBrandListing" class="com.qa.testscripts.BrandProductTest"/>
+        <method signature="CategoryProductTest.verifyAllCategoryIsShown()[pri:0, instance:com.qa.testscripts.CategoryProductTest@5204062d]" name="verifyAllCategoryIsShown" class="com.qa.testscripts.CategoryProductTest"/>
+        <method signature="CategoryProductTest.verifyAllSubCategoryIsShown(java.lang.String,[Ljava.lang.String;)[pri:0, instance:com.qa.testscripts.CategoryProductTest@5204062d]" name="verifyAllSubCategoryIsShown" class="com.qa.testscripts.CategoryProductTest"/>
+        <method signature="CategoryProductTest.verifySubCategorySearch(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.testscripts.CategoryProductTest@5204062d]" name="verifySubCategorySearch" class="com.qa.testscripts.CategoryProductTest"/>
       </group> <!-- frontend -->
     </groups>
-    <test name="Default test" duration-ms="52794" started-at="2022-03-05T16:34:12 PST" finished-at="2022-03-05T16:35:04 PST">
-      <class name="com.qa.testscripts.RegistrationTest">
-        <test-method status="PASS" signature="verifyPageTitle()[pri:0, instance:com.qa.testscripts.RegistrationTest@1990a65e]" name="verifyPageTitle" duration-ms="12044" started-at="2022-03-05T16:34:12 PST" finished-at="2022-03-05T16:34:24 PST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyPageTitle -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.qa.testscripts.RegistrationTest@1990a65e]" name="tearDown" is-config="true" duration-ms="1226" started-at="2022-03-05T16:34:24 PST" finished-at="2022-03-05T16:34:25 PST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="verifyRegistartionWithInvalidEmail()[pri:0, instance:com.qa.testscripts.RegistrationTest@1990a65e]" name="verifyRegistartionWithInvalidEmail" duration-ms="5737" started-at="2022-03-05T16:34:25 PST" finished-at="2022-03-05T16:34:31 PST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyRegistartionWithInvalidEmail -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.qa.testscripts.RegistrationTest@1990a65e]" name="tearDown" is-config="true" duration-ms="1491" started-at="2022-03-05T16:34:31 PST" finished-at="2022-03-05T16:34:32 PST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="verifyRegistartionWithValidCredentials(java.util.HashMap)[pri:0, instance:com.qa.testscripts.RegistrationTest@1990a65e]" name="verifyRegistartionWithValidCredentials" duration-ms="14851" started-at="2022-03-05T16:34:34 PST" data-provider="registrationData" finished-at="2022-03-05T16:34:49 PST">
+    <test name="SearchTest" duration-ms="123432" started-at="2022-03-08T14:37:12 PST" finished-at="2022-03-08T14:39:16 PST">
+      <class name="com.qa.testrunner.TestRunner">
+        <test-method status="PASS" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:com.qa.testrunner.TestRunner@543e710e]" name="setUpClass" is-config="true" duration-ms="989" started-at="2022-03-08T14:37:12 PST" finished-at="2022-03-08T14:37:13 PST">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{country=usa, firstname=j, address=abc street, city=santa clara, mobile=1234, lastname=j, zipcode=95051, password=test@123, sno=1, name=jj, state=ca, email=jj@j.com}]]>
+                <![CDATA[org.testng.TestRunner@731f8236]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyRegistartionWithValidCredentials -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.qa.testscripts.RegistrationTest@1990a65e]" name="tearDown" is-config="true" duration-ms="1429" started-at="2022-03-05T16:34:49 PST" finished-at="2022-03-05T16:34:50 PST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="verifyRegistrationWithExistingUser(java.util.HashMap)[pri:0, instance:com.qa.testscripts.RegistrationTest@1990a65e]" name="verifyRegistrationWithExistingUser" duration-ms="6272" started-at="2022-03-05T16:34:50 PST" data-provider="registrationData" finished-at="2022-03-05T16:34:56 PST">
+        </test-method> <!-- setUpClass -->
+        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.qa.testrunner.TestRunner@543e710e]" name="runScenario" duration-ms="21074" started-at="2022-03-08T14:37:13 PST" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-03-08T14:37:34 PST">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{country=usa, firstname=j, address=abc street, city=santa clara, mobile=1234, lastname=j, zipcode=95051, password=test@123, sno=1, name=jj, state=ca, email=jj@j.com}]]>
+                <![CDATA["Search with valid Search Text"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[Search]"]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyRegistrationWithExistingUser -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.qa.testscripts.RegistrationTest@1990a65e]" name="tearDown" is-config="true" duration-ms="1338" started-at="2022-03-05T16:34:56 PST" finished-at="2022-03-05T16:34:58 PST">
+        </test-method> <!-- runScenario -->
+        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.qa.testrunner.TestRunner@543e710e]" name="runScenario" duration-ms="10529" started-at="2022-03-08T14:37:34 PST" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-03-08T14:37:45 PST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Search with valid Search Text"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[Search]"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.qa.testrunner.TestRunner@543e710e]" name="runScenario" duration-ms="42647" started-at="2022-03-08T14:37:45 PST" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-03-08T14:38:27 PST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Search with invalid Text"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[Search]"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.qa.testrunner.TestRunner@543e710e]" name="runScenario" duration-ms="43443" started-at="2022-03-08T14:38:27 PST" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-03-08T14:39:11 PST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Search with invalid Text"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[Search]"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:com.qa.testrunner.TestRunner@543e710e]" name="tearDownClass" is-config="true" duration-ms="36" started-at="2022-03-08T14:39:16 PST" finished-at="2022-03-08T14:39:16 PST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- com.qa.testrunner.TestRunner -->
+      <class name="com.qa.testscripts.BrandProductTest">
+        <test-method status="PASS" signature="verifyAllBrandsAreListed()[pri:0, instance:com.qa.testscripts.BrandProductTest@5427c60c]" name="verifyAllBrandsAreListed" duration-ms="25002" started-at="2022-03-08T14:37:12 PST" finished-at="2022-03-08T14:37:37 PST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyAllBrandsAreListed -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.qa.testscripts.BrandProductTest@5427c60c]" name="tearDown" is-config="true" duration-ms="6754" started-at="2022-03-08T14:37:37 PST" finished-at="2022-03-08T14:37:44 PST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="verifySignUpWithEmptyCredentials()[pri:0, instance:com.qa.testscripts.RegistrationTest@1990a65e]" name="verifySignUpWithEmptyCredentials" duration-ms="5436" started-at="2022-03-05T16:34:58 PST" finished-at="2022-03-05T16:35:03 PST">
+        <test-method status="PASS" signature="verifyBrandListing(java.lang.String,java.lang.String)[pri:0, instance:com.qa.testscripts.BrandProductTest@5427c60c]" name="verifyBrandListing" duration-ms="10948" started-at="2022-03-08T14:37:44 PST" data-provider="brandTitleVerificationData" finished-at="2022-03-08T14:37:55 PST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[POLO]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[BRAND - POLO PRODUCTS]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifySignUpWithEmptyCredentials -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.qa.testscripts.RegistrationTest@1990a65e]" name="tearDown" is-config="true" duration-ms="1287" started-at="2022-03-05T16:35:03 PST" finished-at="2022-03-05T16:35:04 PST">
+        </test-method> <!-- verifyBrandListing -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.qa.testscripts.BrandProductTest@5427c60c]" name="tearDown" is-config="true" duration-ms="3976" started-at="2022-03-08T14:37:55 PST" finished-at="2022-03-08T14:37:59 PST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- com.qa.testscripts.RegistrationTest -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+        <test-method status="PASS" signature="verifyBrandListing(java.lang.String,java.lang.String)[pri:0, instance:com.qa.testscripts.BrandProductTest@5427c60c]" name="verifyBrandListing" duration-ms="8749" started-at="2022-03-08T14:37:59 PST" data-provider="brandTitleVerificationData" finished-at="2022-03-08T14:38:08 PST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[KOOKIE]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[BRAND - KOOKIE KIDS PRODUCTS]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyBrandListing -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.qa.testscripts.BrandProductTest@5427c60c]" name="tearDown" is-config="true" duration-ms="2772" started-at="2022-03-08T14:38:08 PST" finished-at="2022-03-08T14:38:10 PST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="verifyProductCountUnderEachBrands(java.lang.String)[pri:0, instance:com.qa.testscripts.BrandProductTest@5427c60c]" name="verifyProductCountUnderEachBrands" duration-ms="10400" started-at="2022-03-08T14:38:11 PST" data-provider="brandNameList" finished-at="2022-03-08T14:38:21 PST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Polo]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyProductCountUnderEachBrands -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.qa.testscripts.BrandProductTest@5427c60c]" name="tearDown" is-config="true" duration-ms="2456" started-at="2022-03-08T14:38:21 PST" finished-at="2022-03-08T14:38:23 PST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="verifyProductCountUnderEachBrands(java.lang.String)[pri:0, instance:com.qa.testscripts.BrandProductTest@5427c60c]" name="verifyProductCountUnderEachBrands" duration-ms="13644" started-at="2022-03-08T14:38:23 PST" data-provider="brandNameList" finished-at="2022-03-08T14:38:37 PST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Madame]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyProductCountUnderEachBrands -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.qa.testscripts.BrandProductTest@5427c60c]" name="tearDown" is-config="true" duration-ms="3583" started-at="2022-03-08T14:38:37 PST" finished-at="2022-03-08T14:38:41 PST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="verifyProductCountUnderEachBrands(java.lang.String)[pri:0, instance:com.qa.testscripts.BrandProductTest@5427c60c]" name="verifyProductCountUnderEachBrands" duration-ms="6773" started-at="2022-03-08T14:38:41 PST" data-provider="brandNameList" finished-at="2022-03-08T14:38:47 PST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[HM]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyProductCountUnderEachBrands -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.qa.testscripts.BrandProductTest@5427c60c]" name="tearDown" is-config="true" duration-ms="2268" started-at="2022-03-08T14:38:47 PST" finished-at="2022-03-08T14:38:50 PST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.qa.testscripts.BrandProductTest -->
+      <class name="com.qa.testscripts.CategoryProductTest">
+        <test-method status="PASS" signature="verifyAllCategoryIsShown()[pri:0, instance:com.qa.testscripts.CategoryProductTest@5204062d]" name="verifyAllCategoryIsShown" duration-ms="17773" started-at="2022-03-08T14:37:12 PST" finished-at="2022-03-08T14:37:30 PST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyAllCategoryIsShown -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.qa.testscripts.CategoryProductTest@5204062d]" name="tearDown" is-config="true" duration-ms="4943" started-at="2022-03-08T14:37:30 PST" finished-at="2022-03-08T14:37:35 PST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="verifyAllSubCategoryIsShown(java.lang.String,[Ljava.lang.String;)[pri:0, instance:com.qa.testscripts.CategoryProductTest@5204062d]" name="verifyAllSubCategoryIsShown" duration-ms="8982" started-at="2022-03-08T14:37:35 PST" data-provider="categoryData" finished-at="2022-03-08T14:37:44 PST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[WOMEN]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[Ljava.lang.String;@7364985f]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyAllSubCategoryIsShown -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.qa.testscripts.CategoryProductTest@5204062d]" name="tearDown" is-config="true" duration-ms="3910" started-at="2022-03-08T14:37:44 PST" finished-at="2022-03-08T14:37:48 PST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="verifyAllSubCategoryIsShown(java.lang.String,[Ljava.lang.String;)[pri:0, instance:com.qa.testscripts.CategoryProductTest@5204062d]" name="verifyAllSubCategoryIsShown" duration-ms="9741" started-at="2022-03-08T14:37:48 PST" data-provider="categoryData" finished-at="2022-03-08T14:37:58 PST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[MEN]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[Ljava.lang.String;@5d20e46]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyAllSubCategoryIsShown -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.qa.testscripts.CategoryProductTest@5204062d]" name="tearDown" is-config="true" duration-ms="2453" started-at="2022-03-08T14:37:58 PST" finished-at="2022-03-08T14:38:00 PST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="verifyAllSubCategoryIsShown(java.lang.String,[Ljava.lang.String;)[pri:0, instance:com.qa.testscripts.CategoryProductTest@5204062d]" name="verifyAllSubCategoryIsShown" duration-ms="8410" started-at="2022-03-08T14:38:00 PST" data-provider="categoryData" finished-at="2022-03-08T14:38:09 PST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[KIDS]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[Ljava.lang.String;@ba8d91c]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyAllSubCategoryIsShown -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.qa.testscripts.CategoryProductTest@5204062d]" name="tearDown" is-config="true" duration-ms="2533" started-at="2022-03-08T14:38:09 PST" finished-at="2022-03-08T14:38:11 PST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="verifySubCategorySearch(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.testscripts.CategoryProductTest@5204062d]" name="verifySubCategorySearch" duration-ms="8772" started-at="2022-03-08T14:38:11 PST" data-provider="subcategoryData" finished-at="2022-03-08T14:38:20 PST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[WOMEN]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Dress]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[WOMEN - DRESS PRODUCTS]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifySubCategorySearch -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.qa.testscripts.CategoryProductTest@5204062d]" name="tearDown" is-config="true" duration-ms="2730" started-at="2022-03-08T14:38:20 PST" finished-at="2022-03-08T14:38:23 PST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="verifySubCategorySearch(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.testscripts.CategoryProductTest@5204062d]" name="verifySubCategorySearch" duration-ms="14179" started-at="2022-03-08T14:38:23 PST" data-provider="subcategoryData" finished-at="2022-03-08T14:38:37 PST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[MEN]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Jeans]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[MEN - JEANS PRODUCTS]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifySubCategorySearch -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.qa.testscripts.CategoryProductTest@5204062d]" name="tearDown" is-config="true" duration-ms="3990" started-at="2022-03-08T14:38:37 PST" finished-at="2022-03-08T14:38:41 PST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.qa.testscripts.CategoryProductTest -->
+    </test> <!-- SearchTest -->
+  </suite> <!-- Suite -->
 </testng-results>
